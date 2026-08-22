@@ -16,4 +16,33 @@
   <FilesMatch "\.(jpg|jpeg|png|webp|svg|gif|ico)$">
     Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
+
+  # sitemap.xml / robots.txt: força o Content-Type correto em vez de
+  # depender da configuração padrão do servidor (o Google Search Console
+  # rejeita a busca do sitemap se o cabeçalho não vier como XML) e evita
+  # cache — o sitemap muda sempre que um artigo/receita novo é publicado.
+  <FilesMatch "\.xml$">
+    Header set Content-Type "application/xml; charset=UTF-8"
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "^robots\.txt$">
+    Header set Content-Type "text/plain; charset=UTF-8"
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# Garante que .xml e .txt nunca sejam tratados como HTML/binário caso o
+# mapeamento de tipos padrão do servidor não cubra essas extensões.
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+  AddType text/plain .txt
+</IfModule>
+
+# sitemap.xml e robots.txt são arquivos estáticos simples — impede que
+# qualquer regra de rewrite futura (SPA fallback, roteador etc.) os
+# capture e sirva outra coisa no lugar.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^sitemap\.xml$ - [L]
+  RewriteRule ^robots\.txt$ - [L]
 </IfModule>
