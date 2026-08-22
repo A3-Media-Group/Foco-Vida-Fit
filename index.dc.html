@@ -29,7 +29,7 @@
         <a href="receitas.dc.html" style="padding:14px 26px; border-radius:999px; background:#fff; border:1px solid #D9E2DA; color:#14211A; text-decoration:none; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px;">Ver receitas</a>
       </div>
     </div>
-    <image-slot id="img-home-hero" placeholder="Foto: pessoa treinando ao ar livre" shape="rounded" radius="20" style="width:100%; height:360px; display:block;"></image-slot>
+    <image-slot id="img-home-hero" src="images/pessoa-treinando-ao-ar-livre.jpg" alt="Mulher treinando ao ar livre em academia a céu aberto" placeholder="Foto: pessoa treinando ao ar livre" shape="rounded" radius="20" style="width:100%; height:360px; display:block;"></image-slot>
   </div>
 </section>
 
@@ -57,7 +57,7 @@
     </div>
     <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
       <sc-for list="{{ trendingArticles }}" as="a" hint-placeholder-count="4">
-        <dc-import name="ArticleCard" href="{{ a.href }}" image-id="{{ a.imageId }}" image-placeholder="{{ a.imagePlaceholder }}" category="{{ a.category }}" title="{{ a.title }}" excerpt="{{ a.excerpt }}" read-time="{{ a.readTime }}" date="{{ a.date }}" hint-size="100%,340px"></dc-import>
+        <dc-import name="ArticleCard" href="{{ a.href }}" image-id="{{ a.imageId }}" image-src="{{ a.image }}" image-alt="{{ a.imageAlt }}" image-placeholder="{{ a.imagePlaceholder }}" category="{{ a.category }}" title="{{ a.title }}" excerpt="{{ a.excerpt }}" read-time="{{ a.readTime }}" date="{{ a.date }}" hint-size="100%,340px"></dc-import>
       </sc-for>
     </div>
   </div>
@@ -70,7 +70,7 @@
   </div>
   <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
     <sc-for list="{{ featuredRecipes }}" as="r" hint-placeholder-count="4">
-      <dc-import name="RecipeCard" href="{{ r.href }}" image-id="{{ r.imageId }}" image-placeholder="{{ r.imagePlaceholder }}" category="{{ r.category }}" title="{{ r.title }}" time="{{ r.time }}" calories="{{ r.calories }}" hint-size="100%,300px"></dc-import>
+      <dc-import name="RecipeCard" href="{{ r.href }}" image-id="{{ r.imageId }}" image-src="{{ r.image }}" image-alt="{{ r.imageAlt }}" image-placeholder="{{ r.imagePlaceholder }}" category="{{ r.category }}" title="{{ r.title }}" time="{{ r.time }}" calories="{{ r.calories }}" hint-size="100%,300px"></dc-import>
     </sc-for>
   </div>
 </section>

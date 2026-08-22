@@ -34,7 +34,7 @@
 <section style="max-width:1200px; margin:0 auto; padding:0 24px 56px;">
   <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px;">
     <sc-for list="{{ filteredArticles }}" as="a" hint-placeholder-count="6">
-      <dc-import name="ArticleCard" href="{{ a.href }}" image-id="{{ a.imageId }}" image-placeholder="{{ a.imagePlaceholder }}" category="{{ a.category }}" title="{{ a.title }}" excerpt="{{ a.excerpt }}" read-time="{{ a.readTime }}" date="{{ a.date }}" hint-size="100%,340px"></dc-import>
+      <dc-import name="ArticleCard" href="{{ a.href }}" image-id="{{ a.imageId }}" image-src="{{ a.image }}" image-alt="{{ a.imageAlt }}" image-placeholder="{{ a.imagePlaceholder }}" category="{{ a.category }}" title="{{ a.title }}" excerpt="{{ a.excerpt }}" read-time="{{ a.readTime }}" date="{{ a.date }}" hint-size="100%,340px"></dc-import>
     </sc-for>
   </div>
   <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">

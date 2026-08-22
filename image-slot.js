@@ -438,7 +438,7 @@
 
   class ImageSlot extends HTMLElement {
     static get observedAttributes() {
-      return ['shape', 'radius', 'mask', 'fit', 'placeholder', 'src', 'id', 'credit', 'credit-href'];
+      return ['shape', 'radius', 'mask', 'fit', 'placeholder', 'src', 'id', 'credit', 'credit-href', 'alt'];
     }
 
     /** Duplicate-slide hook (called by deck-stage, see its
@@ -1107,6 +1107,10 @@
         };
       }
       this._cap.textContent = this.getAttribute('placeholder') || 'Drop an image';
+      // Author-supplied accessible name for the filled photo. The ghost
+      // (drag-preview duplicate) stays alt="" — it's a visual echo of the
+      // same img, not a second thing to announce.
+      this._img.alt = this.getAttribute('alt') || '';
       // Toggle via style.display — the [hidden] attribute alone loses to
       // the display:flex / display:block rules in the stylesheet above.
       // An Unsplash src with no credit attribute must NOT render — showing
