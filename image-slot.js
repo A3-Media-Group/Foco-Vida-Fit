@@ -438,7 +438,7 @@
 
   class ImageSlot extends HTMLElement {
     static get observedAttributes() {
-      return ['shape', 'radius', 'mask', 'fit', 'placeholder', 'src', 'id', 'credit', 'credit-href', 'alt'];
+      return ['shape', 'radius', 'mask', 'fit', 'placeholder', 'src', 'id', 'credit', 'credit-href', 'alt', 'loading'];
     }
 
     /** Duplicate-slide hook (called by deck-stage, see its
@@ -501,7 +501,7 @@
       root.innerHTML =
         '<style>' + stylesheet + '</style>' +
         '<div class="frame" part="frame">' +
-        '  <img part="image" alt="" draggable="false" style="display:none">' +
+        '  <img part="image" alt="" loading="lazy" decoding="async" draggable="false" style="display:none">' +
         '  <div class="empty" part="empty">' + icon +
         '    <div class="cap"></div>' +
         '    <div class="sub">or <u>browse files</u></div></div>' +
@@ -1111,6 +1111,10 @@
       // (drag-preview duplicate) stays alt="" — it's a visual echo of the
       // same img, not a second thing to announce.
       this._img.alt = this.getAttribute('alt') || '';
+      // Defaults to lazy (most slots are below the fold in a card grid or
+      // article body); author sets loading="eager" on the one hero image
+      // that's visible on first paint so it isn't held back needlessly.
+      this._img.loading = this.getAttribute('loading') || 'lazy';
       // Toggle via style.display — the [hidden] attribute alone loses to
       // the display:flex / display:block rules in the stylesheet above.
       // An Unsplash src with no credit attribute must NOT render — showing

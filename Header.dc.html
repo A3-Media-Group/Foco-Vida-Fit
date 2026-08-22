@@ -35,7 +35,22 @@
   </div>
   <sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
     <div style="border-top:1px solid #E4E8E2; padding:14px 24px;">
-      <input placeholder="Buscar artigos, receitas..." style="width:100%; max-width:480px; padding:10px 14px; border-radius:999px; border:1px solid #E4E8E2; font-family:'Work Sans',sans-serif; font-size:14px; outline:none; display:block; margin:0 auto;" />
+      <div style="max-width:480px; margin:0 auto; position:relative;">
+        <input value="{{ query }}" onInput="{{ onQueryChange }}" autoFocus="true" placeholder="Buscar artigos, receitas..." style="width:100%; box-sizing:border-box; padding:10px 14px; border-radius:999px; border:1px solid #E4E8E2; font-family:'Work Sans',sans-serif; font-size:14px; outline:none; display:block;" />
+        <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute; top:calc(100% + 6px); left:0; right:0; background:#fff; border:1px solid #E4E8E2; border-radius:14px; box-shadow:0 12px 28px rgba(20,33,26,0.12); overflow:hidden; z-index:60;">
+            <sc-for list="{{ results }}" as="r" hint-placeholder-count="3">
+              <a href="{{ r.href }}" style="display:flex; flex-direction:column; gap:2px; padding:10px 16px; text-decoration:none; border-bottom:1px solid #F1F5F0;">
+                <span style="font-family:'Work Sans',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#16A34A;">{{ r.kind }} · {{ r.category }}</span>
+                <span style="font-family:'Work Sans',sans-serif; font-size:14px; font-weight:600; color:#14211A;">{{ r.title }}</span>
+              </a>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute; top:calc(100% + 6px); left:0; right:0; background:#fff; border:1px solid #E4E8E2; border-radius:14px; box-shadow:0 12px 28px rgba(20,33,26,0.12); padding:14px 16px; font-family:'Work Sans',sans-serif; font-size:13.5px; color:#8A9790; z-index:60;">Nada encontrado para "{{ query }}".</div>
+        </sc-if>
+      </div>
     </div>
   </sc-if>
 </header>
@@ -43,25 +58,52 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { isMobile: (typeof window !== 'undefined' && window.innerWidth < 860), menuOpen: false, searchOpen: false };
+  state = { isMobile: (typeof window !== 'undefined' && window.innerWidth < 860), menuOpen: false, searchOpen: false, query: '', articles: null, recipes: null };
   componentDidMount() {
     this.onResize = () => this.setState({ isMobile: window.innerWidth < 860 });
     window.addEventListener('resize', this.onResize);
   }
   componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+  async ensureSiteData() {
+    // Carrega os dados de artigos/receitas só quando a busca é aberta pela
+    // primeira vez — o cabeçalho aparece em toda página, não vale buscar
+    // isso sempre.
+    if (this.state.articles) return;
+    const mod = await import('./site-data.js');
+    this.setState({ articles: mod.ARTICLES, recipes: mod.RECIPES });
+  }
   renderVals() {
-    const { isMobile, menuOpen, searchOpen } = this.state;
+    const { isMobile, menuOpen, searchOpen, query, articles, recipes } = this.state;
     const navStyle = isMobile ? {
       display: menuOpen ? 'flex' : 'none', flexDirection: 'column', position: 'absolute',
       top: '65px', left: 0, right: 0, background: '#FAFAF7', borderBottom: '1px solid #E4E8E2',
       alignItems: 'flex-start', gap: '4px', padding: '12px 24px 18px', boxShadow: '0 10px 24px rgba(20,33,26,0.08)'
     } : { display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '26px' };
+
+    const q = query.trim().toLowerCase();
+    let results = [];
+    if (q && articles && recipes) {
+      const a = articles.filter(x => x.title.toLowerCase().includes(q))
+        .map(x => ({ kind: 'Artigo', category: x.category, title: x.title, href: `artigo-${x.slug}.dc.html` }));
+      const r = recipes.filter(x => x.title.toLowerCase().includes(q))
+        .map(x => ({ kind: 'Receita', category: x.category, title: x.title, href: `receita-${x.slug}.dc.html` }));
+      results = [...a, ...r].slice(0, 8);
+    }
+
     return {
       navStyle,
       menuBtnStyle: { display: isMobile ? 'flex' : 'none', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid #E4E8E2', background: '#fff', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' },
       searchOpen,
+      query,
+      results,
+      hasResults: q.length > 0 && results.length > 0,
+      noResults: q.length > 0 && results.length === 0 && !!articles,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
-      toggleSearch: () => this.setState(s => ({ searchOpen: !s.searchOpen })),
+      toggleSearch: () => {
+        this.ensureSiteData();
+        this.setState(s => ({ searchOpen: !s.searchOpen, query: s.searchOpen ? s.query : '' }));
+      },
+      onQueryChange: (e) => this.setState({ query: e.target.value }),
     };
   }
 }

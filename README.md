@@ -45,4 +45,8 @@ Este é um site **100% estático** (sem build, sem `package.json`, sem framework
 - SEO: `sitemap.xml`, `robots.txt`, `ads.txt` (troque o Publisher ID do AdSense em `ads.txt` antes de publicar)
 
 ## Pendências
-- Restam 35 dos 50 artigos e o backend dos formulários (contato/newsletter) a implementar.
+- Restam 35 dos 50 artigos planejados.
+- Formulários de contato/newsletter salvam localmente (`localStorage`) por enquanto — não há backend real nem envio de e-mail; trocar por uma API/serviço de formulário quando houver um.
+- `ads.txt` ainda tem o Publisher ID placeholder — trocar pelo real antes de ativar o AdSense.
+- Ícones de Instagram/YouTube/TikTok no rodapé apontam para "#" — trocar pelos links reais quando as contas existirem.
+- Imagens ainda em JPEG — converter para WebP é uma melhoria de performance pendente (nenhuma ferramenta de conversão disponível no ambiente atual).

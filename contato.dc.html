@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>body{margin:0; background:#FAFAF7;}</style>
   <title>Contato | Foco Vida Fit</title>
+  <link rel="canonical" href="https://focovidafit.com.br/contato.dc.html" />
+  <link rel="icon" type="image/png" href="logo-foco-vida-fit.png" />
   <meta name="description" content="Fale com a equipe do Foco Vida Fit para dúvidas, sugestões de pauta ou parcerias." />
   <meta property="og:title" content="Contato | Foco Vida Fit" />
   <meta property="og:description" content="Fale com a equipe do Foco Vida Fit para dúvidas, sugestões de pauta ou parcerias." />
@@ -40,19 +42,19 @@
     <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:16px;">
       <div>
         <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Nome</label>
-        <input required="true" placeholder="Seu nome" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
+        <input name="nome" required="true" placeholder="Seu nome" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
       </div>
       <div>
         <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">E-mail</label>
-        <input type="email" required="true" placeholder="seu-email@exemplo.com" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
+        <input name="email" type="email" required="true" placeholder="seu-email@exemplo.com" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
       </div>
       <div>
         <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Assunto</label>
-        <input placeholder="Sobre o que você quer falar?" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
+        <input name="assunto" placeholder="Sobre o que você quer falar?" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
       </div>
       <div>
         <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Mensagem</label>
-        <textarea required="true" rows="5" placeholder="Escreva sua mensagem" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none; resize:vertical;"></textarea>
+        <textarea name="mensagem" required="true" rows="5" placeholder="Escreva sua mensagem" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none; resize:vertical;"></textarea>
       </div>
       <button type="submit" style="align-self:flex-start; padding:13px 26px; border-radius:999px; border:none; background:#F97316; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">Enviar mensagem</button>
     </form>
@@ -69,7 +71,24 @@ class Component extends DCLogic {
     return {
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,
-      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+      onSubmit: (e) => {
+        e.preventDefault();
+        // Sem backend ainda: guarda a mensagem no localStorage do
+        // navegador do visitante para não perder o conteúdo (troque por
+        // uma chamada de API real quando houver um serviço por trás).
+        try {
+          const data = new FormData(e.target);
+          const key = 'fvf_contact_messages';
+          const list = JSON.parse(localStorage.getItem(key) || '[]');
+          list.push({
+            nome: data.get('nome'), email: data.get('email'),
+            assunto: data.get('assunto'), mensagem: data.get('mensagem'),
+            date: new Date().toISOString(),
+          });
+          localStorage.setItem(key, JSON.stringify(list));
+        } catch (err) { /* localStorage indisponível (modo privado etc.) — segue sem persistir */ }
+        this.setState({ submitted: true });
+      },
     };
   }
 }
