@@ -38,7 +38,7 @@
 </section>
 
 <section style="max-width:1200px; margin:0 auto; padding:0 24px 56px;">
-  <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;">
     <sc-for list="{{ filteredRecipes }}" as="r" hint-placeholder-count="8">
       <dc-import name="RecipeCard" href="{{ r.href }}" image-id="{{ r.imageId }}" image-src="{{ r.image }}" image-alt="{{ r.imageAlt }}" image-placeholder="{{ r.imagePlaceholder }}" category="{{ r.category }}" title="{{ r.title }}" time="{{ r.time }}" calories="{{ r.calories }}" hint-size="100%,300px"></dc-import>
     </sc-for>

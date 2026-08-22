@@ -18,14 +18,14 @@
       <img src="logo-foco-vida-fit.png" alt="Logo Foco Vida Fit" style="height:44px; width:auto; display:block;">
     </a>
     <nav style="{{ navStyle }}">
-      <a href="index.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:8px 0;" style-hover="color:#16A34A;">Home</a>
-      <a href="blog.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:8px 0;" style-hover="color:#16A34A;">Blog</a>
-      <a href="receitas.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:8px 0;" style-hover="color:#16A34A;">Receitas</a>
-      <a href="sobre.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:8px 0;" style-hover="color:#16A34A;">Sobre</a>
-      <a href="contato.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:8px 0;" style-hover="color:#16A34A;">Contato</a>
+      <a href="index.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:12px 0;" style-hover="color:#16A34A;">Home</a>
+      <a href="blog.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:12px 0;" style-hover="color:#16A34A;">Blog</a>
+      <a href="receitas.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:12px 0;" style-hover="color:#16A34A;">Receitas</a>
+      <a href="sobre.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:12px 0;" style-hover="color:#16A34A;">Sobre</a>
+      <a href="contato.dc.html" style="font-family:'Work Sans',sans-serif; font-size:15px; font-weight:500; color:#14211A; text-decoration:none; padding:12px 0;" style-hover="color:#16A34A;">Contato</a>
     </nav>
     <div style="display:flex; align-items:center; gap:10px; flex-shrink:0;">
-      <button onClick="{{ toggleSearch }}" aria-label="Buscar" style="width:38px;height:38px;border-radius:50%;border:1px solid #E4E8E2;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <button onClick="{{ toggleSearch }}" aria-label="Buscar" style="width:44px;height:44px;border-radius:50%;border:1px solid #E4E8E2;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#14211A" stroke-width="2"></circle><line x1="21" y1="21" x2="16.5" y2="16.5" stroke="#14211A" stroke-width="2" stroke-linecap="round"></line></svg>
       </button>
       <button onClick="{{ toggleMenu }}" style="{{ menuBtnStyle }}">
@@ -58,7 +58,7 @@ class Component extends DCLogic {
     } : { display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '26px' };
     return {
       navStyle,
-      menuBtnStyle: { display: isMobile ? 'flex' : 'none', width: '38px', height: '38px', borderRadius: '50%', border: '1px solid #E4E8E2', background: '#fff', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' },
+      menuBtnStyle: { display: isMobile ? 'flex' : 'none', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid #E4E8E2', background: '#fff', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' },
       searchOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       toggleSearch: () => this.setState(s => ({ searchOpen: !s.searchOpen })),
