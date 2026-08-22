@@ -21,9 +21,19 @@ Site completo do blog Foco Vida Fit (fitness, nutrição e saúde), pronto para 
 1. No repositório, vá em **Settings → Pages**.
 2. Em "Branch", selecione `main` e pasta `/ (root)`.
 3. Salve. O site ficará disponível em `https://SEU-USUARIO.github.io/SEU-REPO/`.
-4. `index.html` já redireciona automaticamente para `index.dc.html` (página inicial real), para compatibilidade com hospedagens que exigem `index.html` na raiz.
 
 Para usar o domínio próprio (focovidafit.com.br), configure um registro CNAME apontando para o GitHub Pages e adicione um arquivo `CNAME` na raiz com o domínio — ou aponte o domínio para a hospedagem que preferir, já que os arquivos são HTML estático.
+
+## Como publicar (Hostinger via Git)
+
+Este é um site **100% estático** (sem build, sem `package.json`, sem framework) — o navegador interpreta os arquivos `.dc.html` direto, usando `support.js`. Não existe pasta de saída (`dist`/`build`) para configurar.
+
+1. No painel da Hostinger, em **Site → Git**, aponte o deploy para a branch `main` deste repositório.
+2. **Diretório de destino:** raiz do repositório (`/`) — não existe subpasta de build para apontar.
+3. Confirme que a Hostinger não está com o **"Construtor de Site" / página "em breve"** ativado para o domínio — esse modo tem prioridade sobre o deploy Git e é a causa mais comum de aparecer uma página genérica no lugar do site.
+4. Depois de qualquer push, force um novo deploy no painel (**Deploy now** / **Sincronizar**) caso não haja auto-deploy configurado, e limpe o cache do navegador/CDN antes de conferir.
+
+`index.html` (raiz) contém o mesmo conteúdo da home (`index.dc.html`), duplicado — não um redirecionamento — para que qualquer servidor que sirva `index.html` por padrão já mostre o site real, sem depender de um refresh funcionar. **Se editar a home, aplique a mudança nos dois arquivos** (`index.dc.html` e `index.html`). Os links internos de navegação (menu, rodapé) continuam apontando para `index.dc.html`.
 
 ## Estrutura
 - Páginas principais: `index.dc.html`, `blog.dc.html`, `receitas.dc.html`, `sobre.dc.html`, `contato.dc.html`, páginas legais, `404.dc.html`
@@ -35,5 +45,4 @@ Para usar o domínio próprio (focovidafit.com.br), configure um registro CNAME 
 - SEO: `sitemap.xml`, `robots.txt`, `ads.txt` (troque o Publisher ID do AdSense em `ads.txt` antes de publicar)
 
 ## Pendências
-- Imagens são placeholders — arraste fotos reais em cada `<image-slot>` antes de publicar.
 - Restam 35 dos 50 artigos e o backend dos formulários (contato/newsletter) a implementar.
