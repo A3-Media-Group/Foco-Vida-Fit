@@ -42,7 +42,7 @@
 class Component extends DCLogic {
   state = { recipes: [], category: 'Todos' };
   async componentDidMount() {
-    const mod = await import('./site-data.js');
+    const mod = await import('./site-data.js?v=2');
     this.setState({ recipes: mod.RECIPES });
   }
   renderVals() {

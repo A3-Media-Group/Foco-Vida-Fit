@@ -1,0 +1,19 @@
+# Site estático sem build: cada deploy substitui o conteúdo dos mesmos
+# nomes de arquivo (.dc.html, site-data.js, support.js, image-slot.js).
+# Sem isso, navegadores podem reter uma cópia em cache por horas/dias e
+# mostrar conteúdo desatualizado (ex: site-data.js sem as fotos novas)
+# mesmo depois de um deploy correto.
+<IfModule mod_headers.c>
+  # HTML e JS: sempre revalida com o servidor antes de reusar o cache
+  # (rápido — só confirma "mudou?" — mas nunca serve algo desatualizado).
+  <FilesMatch "\.(html|js)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Imagens: raramente mudam depois de publicadas (o projeto usa nomes
+  # descritivos e cria um arquivo novo ao trocar uma foto), então podem
+  # ficar em cache por mais tempo sem risco de ficarem desatualizadas.
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|gif|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>

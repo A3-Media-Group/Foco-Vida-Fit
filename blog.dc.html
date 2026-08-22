@@ -49,7 +49,7 @@
 class Component extends DCLogic {
   state = { articles: [], category: 'Todos' };
   async componentDidMount() {
-    const mod = await import('./site-data.js');
+    const mod = await import('./site-data.js?v=2');
     let initial = 'Todos';
     try {
       const params = new URLSearchParams(window.location.search);
