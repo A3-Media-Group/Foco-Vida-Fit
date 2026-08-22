@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>body{margin:0; background:#FAFAF7;}</style>
+  <title>Receitas Fitness e Saudáveis | Foco Vida Fit</title>
+  <meta name="description" content="Receitas fitness para café da manhã, pré-treino, pós-treino, refeições e lanches saudáveis, com informação nutricional." />
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+
+<section style="max-width:1200px; margin:0 auto; padding:48px 24px 0;">
+  <h1 style="font-family:'Poppins',sans-serif; font-weight:800; font-size:34px; color:#14211A; margin:0 0 10px;">Receitas</h1>
+  <p style="font-family:'Work Sans',sans-serif; font-size:15.5px; color:#5B6B60; margin:0 0 28px; max-width:640px;">Receitas fitness para cada momento do dia, com informações nutricionais aproximadas.</p>
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;">
+    <sc-for list="{{ categories }}" as="c" hint-placeholder-count="6">
+      <button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button>
+    </sc-for>
+  </div>
+</section>
+
+<section style="max-width:1200px; margin:0 auto; padding:0 24px 56px;">
+  <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
+    <sc-for list="{{ filteredRecipes }}" as="r" hint-placeholder-count="8">
+      <dc-import name="RecipeCard" href="{{ r.href }}" image-id="{{ r.imageId }}" image-placeholder="{{ r.imagePlaceholder }}" category="{{ r.category }}" title="{{ r.title }}" time="{{ r.time }}" calories="{{ r.calories }}" hint-size="100%,300px"></dc-import>
+    </sc-for>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { recipes: [], category: 'Todos' };
+  async componentDidMount() {
+    const mod = await import('./site-data.js');
+    this.setState({ recipes: mod.RECIPES });
+  }
+  renderVals() {
+    const cats = ['Todos', 'Café da manhã', 'Pré-treino', 'Pós-treino', 'Almoço/Jantar fit', 'Doce fit'];
+    const { recipes, category } = this.state;
+    const filtered = (category === 'Todos' ? recipes : recipes.filter(r => r.category === category)).map(r => ({
+      ...r, href: `receita-${r.slug}.dc.html`, imageId: `img-receitas-${r.slug}`, imagePlaceholder: `Foto do prato: ${r.title}`,
+    }));
+    const categories = cats.map(label => ({
+      label,
+      onClick: () => this.setState({ category: label }),
+      style: {
+        padding: '9px 18px', borderRadius: '999px', border: label === category ? 'none' : '1px solid #D9E2DA',
+        background: label === category ? '#F97316' : '#fff', color: label === category ? '#fff' : '#14211A',
+        fontFamily: "'Work Sans',sans-serif", fontSize: '13.5px', fontWeight: 600, cursor: 'pointer',
+      },
+    }));
+    return { categories, filteredRecipes: filtered };
+  }
+}
+
+</script>
+</body>
+</html>

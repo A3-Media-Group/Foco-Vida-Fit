@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</helmet>
+<sc-if value="{{ visible }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; left:16px; right:16px; bottom:16px; z-index:200; max-width:640px; margin:0 auto; background:#14211A; color:#FAFAF7; border-radius:14px; padding:20px 22px; box-shadow:0 16px 40px rgba(0,0,0,0.25); display:flex; flex-direction:column; gap:14px;">
+    <p style="margin:0; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.6; color:#D8E0DB;">Usamos cookies para melhorar sua experiência, personalizar conteúdo e exibir anúncios (Google AdSense). Ao continuar navegando, você concorda com nossa <a href="politica-cookies.dc.html" style="color:#4ADE80;">Política de Cookies</a>, em conformidade com a LGPD.</p>
+    <div style="display:flex; gap:10px; justify-content:flex-end;">
+      <button onClick="{{ reject }}" style="padding:9px 16px; border-radius:999px; border:1px solid #3A4A3E; background:transparent; color:#D8E0DB; font-family:'Work Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer;">Recusar</button>
+      <button onClick="{{ accept }}" style="padding:9px 18px; border-radius:999px; border:none; background:#F97316; color:#fff; font-family:'Work Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer;">Aceitar</button>
+    </div>
+  </div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { visible: false };
+  componentDidMount() {
+    try {
+      const consent = localStorage.getItem('fvf-cookie-consent');
+      if (!consent) this.setState({ visible: true });
+    } catch (e) { this.setState({ visible: true }); }
+  }
+  setConsent(v) {
+    try { localStorage.setItem('fvf-cookie-consent', v); } catch (e) {}
+    this.setState({ visible: false });
+  }
+  renderVals() {
+    return {
+      visible: this.state.visible,
+      accept: () => this.setConsent('accepted'),
+      reject: () => this.setConsent('rejected'),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

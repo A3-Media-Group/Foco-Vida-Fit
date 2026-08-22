@@ -1,2 +1,39 @@
-# Foco-Vida-Fit
-Blog
+# Foco Vida Fit — Site
+
+Site completo do blog Foco Vida Fit (fitness, nutrição e saúde), pronto para subir no GitHub.
+
+## Como subir para o GitHub
+
+1. Baixe e descompacte esta pasta.
+2. No terminal, dentro da pasta:
+   ```
+   git init
+   git add .
+   git commit -m "Site inicial Foco Vida Fit"
+   git branch -M main
+   git remote add origin https://github.com/SEU-USUARIO/SEU-REPO.git
+   git push -u origin main
+   ```
+3. Se o repositório já existir no GitHub (ex: A3-Media-Group/Foco-Vida-Fit), troque a URL do `remote add` pela dele.
+
+## Como publicar (GitHub Pages)
+
+1. No repositório, vá em **Settings → Pages**.
+2. Em "Branch", selecione `main` e pasta `/ (root)`.
+3. Salve. O site ficará disponível em `https://SEU-USUARIO.github.io/SEU-REPO/`.
+4. `index.html` já redireciona automaticamente para `index.dc.html` (página inicial real), para compatibilidade com hospedagens que exigem `index.html` na raiz.
+
+Para usar o domínio próprio (focovidafit.com.br), configure um registro CNAME apontando para o GitHub Pages e adicione um arquivo `CNAME` na raiz com o domínio — ou aponte o domínio para a hospedagem que preferir, já que os arquivos são HTML estático.
+
+## Estrutura
+- Páginas principais: `index.dc.html`, `blog.dc.html`, `receitas.dc.html`, `sobre.dc.html`, `contato.dc.html`, páginas legais, `404.dc.html`
+- 15 artigos: `artigo-*.dc.html`
+- 10 receitas: `receita-*.dc.html`
+- Componentes: `Header.dc.html`, `Footer.dc.html`, `ArticleCard.dc.html`, `RecipeCard.dc.html`, `AdSlot.dc.html`, `Newsletter.dc.html`, `CookieBanner.dc.html`, `TrustBadge.dc.html`, `BackToTop.dc.html`
+- Runtime: `support.js` (necessário — não remova), `image-slot.js`
+- Dados: `site-data.js`
+- SEO: `sitemap.xml`, `robots.txt`, `ads.txt` (troque o Publisher ID do AdSense em `ads.txt` antes de publicar)
+
+## Pendências
+- Imagens são placeholders — arraste fotos reais em cada `<image-slot>` antes de publicar.
+- Restam 35 dos 50 artigos e o backend dos formulários (contato/newsletter) a implementar.

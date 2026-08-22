@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>body{margin:0; background:#FAFAF7;}</style>
+  <title>Blog — Artigos sobre Fitness, Nutrição e Saúde | Foco Vida Fit</title>
+  <meta name="description" content="Todos os artigos do Foco Vida Fit sobre emagrecimento, nutrição, suplementação, saúde e mitos do fitness." />
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+
+<section style="max-width:1200px; margin:0 auto; padding:48px 24px 0;">
+  <h1 style="font-family:'Poppins',sans-serif; font-weight:800; font-size:34px; color:#14211A; margin:0 0 10px;">Blog</h1>
+  <p style="font-family:'Work Sans',sans-serif; font-size:15.5px; color:#5B6B60; margin:0 0 28px; max-width:640px;">Artigos sobre treino, nutrição, suplementação e saúde, revisados com base em fontes oficiais.</p>
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;">
+    <sc-for list="{{ categories }}" as="c" hint-placeholder-count="6">
+      <button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button>
+    </sc-for>
+  </div>
+</section>
+
+<div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+  <dc-import name="AdSlot" label="728×90" height="90" max-width="728px" margin="0 auto 32px" hint-size="100%,90px"></dc-import>
+</div>
+
+<section style="max-width:1200px; margin:0 auto; padding:0 24px 56px;">
+  <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px;">
+    <sc-for list="{{ filteredArticles }}" as="a" hint-placeholder-count="6">
+      <dc-import name="ArticleCard" href="{{ a.href }}" image-id="{{ a.imageId }}" image-placeholder="{{ a.imagePlaceholder }}" category="{{ a.category }}" title="{{ a.title }}" excerpt="{{ a.excerpt }}" read-time="{{ a.readTime }}" date="{{ a.date }}" hint-size="100%,340px"></dc-import>
+    </sc-for>
+  </div>
+  <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+    <p style="font-family:'Work Sans',sans-serif; color:#8A9790; text-align:center; padding:48px 0;">Nenhum artigo encontrado nesta categoria.</p>
+  </sc-if>
+</section>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { articles: [], category: 'Todos' };
+  async componentDidMount() {
+    const mod = await import('./site-data.js');
+    let initial = 'Todos';
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('cat');
+      if (cat) initial = cat;
+    } catch (e) {}
+    this.setState({ articles: mod.ARTICLES, category: initial });
+  }
+  renderVals() {
+    const cats = ['Todos', 'Emagrecimento', 'Nutrição', 'Suplementação', 'Saúde', 'Mitos e verdades'];
+    const { articles, category } = this.state;
+    const filtered = (category === 'Todos' ? articles : articles.filter(a => a.category === category)).map(a => ({
+      ...a, href: `artigo-${a.slug}.dc.html`, imageId: `img-blog-${a.slug}`, imagePlaceholder: `Foto: ${a.title}`,
+    }));
+    const categories = cats.map(label => ({
+      label,
+      onClick: () => this.setState({ category: label }),
+      style: {
+        padding: '9px 18px', borderRadius: '999px', border: label === category ? 'none' : '1px solid #D9E2DA',
+        background: label === category ? '#16A34A' : '#fff', color: label === category ? '#fff' : '#14211A',
+        fontFamily: "'Work Sans',sans-serif", fontSize: '13.5px', fontWeight: 600, cursor: 'pointer',
+      },
+    }));
+    return { categories, filteredArticles: filtered, noResults: articles.length > 0 && filtered.length === 0 };
+  }
+}
+
+</script>
+</body>
+</html>

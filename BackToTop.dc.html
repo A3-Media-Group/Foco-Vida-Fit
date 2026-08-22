@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<button onClick="{{ scrollTop }}" aria-label="Voltar ao topo" style="{{ style }}">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { visible: false };
+  componentDidMount() {
+    this.onScroll = () => this.setState({ visible: window.scrollY > 600 });
+    window.addEventListener('scroll', this.onScroll);
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    return {
+      style: {
+        position: 'fixed', right: '24px', bottom: '24px', width: '46px', height: '46px', borderRadius: '50%',
+        background: '#16A34A', border: 'none', display: this.state.visible ? 'flex' : 'none', alignItems: 'center',
+        justifyContent: 'center', cursor: 'pointer', boxShadow: '0 8px 20px rgba(20,33,26,0.25)', zIndex: 100,
+      },
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

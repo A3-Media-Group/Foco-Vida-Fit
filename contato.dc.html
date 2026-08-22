@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>body{margin:0; background:#FAFAF7;}</style>
+  <title>Contato | Foco Vida Fit</title>
+  <meta name="description" content="Fale com a equipe do Foco Vida Fit para dúvidas, sugestões de pauta ou parcerias." />
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+
+<section style="max-width:640px; margin:0 auto; padding:56px 24px 80px;">
+  <h1 style="font-family:'Poppins',sans-serif; font-weight:800; font-size:34px; color:#14211A; margin:0 0 10px;">Contato</h1>
+  <p style="font-family:'Work Sans',sans-serif; font-size:15.5px; color:#5B6B60; margin:0 0 32px;">Dúvidas, sugestões de pauta ou parcerias? Preencha o formulário abaixo.</p>
+
+  <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#F1F5F0; border-radius:12px; padding:24px; font-family:'Work Sans',sans-serif; color:#14211A;">
+      <strong style="color:#16A34A;">Mensagem enviada!</strong> Obrigado pelo contato — responderemos em breve.
+    </div>
+  </sc-if>
+  <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+    <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:16px;">
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Nome</label>
+        <input required="true" placeholder="Seu nome" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
+      </div>
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">E-mail</label>
+        <input type="email" required="true" placeholder="seu-email@exemplo.com" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
+      </div>
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Assunto</label>
+        <input placeholder="Sobre o que você quer falar?" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
+      </div>
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Mensagem</label>
+        <textarea required="true" rows="5" placeholder="Escreva sua mensagem" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none; resize:vertical;"></textarea>
+      </div>
+      <button type="submit" style="align-self:flex-start; padding:13px 26px; border-radius:999px; border:none; background:#F97316; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">Enviar mensagem</button>
+    </form>
+  </sc-if>
+</section>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

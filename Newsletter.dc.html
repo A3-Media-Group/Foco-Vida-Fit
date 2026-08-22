@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</helmet>
+<div style="background:#F1F5F0; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:6px; align-items:{{ align }};">
+  <div style="width:44px; height:44px; border-radius:50%; background:#16A34A; display:flex; align-items:center; justify-content:center; margin-bottom:6px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6L12 13L21 6" stroke="#FAFAF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="3" y="5" width="18" height="14" rx="2" stroke="#FAFAF7" stroke-width="2"></rect></svg>
+  </div>
+  <h3 style="margin:0; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">{{ title }}</h3>
+  <p style="margin:0 0 14px; font-family:'Work Sans',sans-serif; font-size:14px; color:#5B6B60; max-width:420px;">{{ subtitle }}</p>
+  <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+    <div style="font-family:'Work Sans',sans-serif; font-size:14px; font-weight:600; color:#16A34A;">Inscrição confirmada! Você vai receber nossas novidades em breve.</div>
+  </sc-if>
+  <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+    <form onSubmit="{{ onSubmit }}" style="display:flex; gap:10px; width:100%; max-width:420px; flex-wrap:wrap;">
+      <input type="email" required="true" placeholder="seu-email@exemplo.com" style="flex:1; min-width:200px; padding:12px 16px; border-radius:999px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:14px; outline:none;" />
+      <button type="submit" style="padding:12px 22px; border-radius:999px; border:none; background:#F97316; color:#fff; font-family:'Work Sans',sans-serif; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap;">Inscrever</button>
+    </form>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;title&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Receba nossas novidades&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;subtitle&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Dicas de treino, receitas e nutrição direto no seu e-mail.&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;align&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;flex-start&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      title: this.props.title ?? 'Receba nossas novidades',
+      subtitle: this.props.subtitle ?? 'Dicas de treino, receitas e nutrição direto no seu e-mail, sem spam.',
+      align: this.props.align ?? 'flex-start',
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><script src="image-slot.js"></script></helmet>
+<a href="{{ href }}" style="display:flex; flex-direction:column; text-decoration:none; border:1px solid #E4E8E2; border-radius:14px; overflow:hidden; background:#fff; height:100%;">
+  <image-slot id="{{ imageId }}" placeholder="{{ imagePlaceholder }}" shape="rect" style="width:100%; height:170px; display:block;"></image-slot>
+  <div style="padding:16px 18px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
+    <span style="font-family:'Work Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#16A34A;">{{ category }}</span>
+    <h3 style="margin:0; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; line-height:1.35; color:#14211A;">{{ title }}</h3>
+    <p style="margin:0; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.55; color:#5B6B60; flex:1;">{{ excerpt }}</p>
+    <div style="display:flex; gap:12px; margin-top:6px; font-family:'Work Sans',sans-serif; font-size:12px; color:#8A9790;">
+      <span>{{ readTime }}</span>
+      <span>·</span>
+      <span>{{ date }}</span>
+    </div>
+  </div>
+</a>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;href&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;#&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;imageId&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;img-card&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;imagePlaceholder&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Foto do artigo&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;category&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Categoria&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;title&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Título do artigo&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;excerpt&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Resumo do artigo.&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;readTime&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;6 min&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;date&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;22 ago 2026&quot;, &quot;tsType&quot;: &quot;string&quot;}}"></script>
+</body>
+</html>
