@@ -36,7 +36,8 @@ Para cada um dos 5 artigos e das 2 receitas:
 
 ## Etapa 5 — Integração
 - Adicione os 5 artigos e as 2 receitas nos locais corretos do site (listagens, home se aplicável, sitemap.xml).
-- Atualize o sitemap.xml para incluir as novas páginas.
-- Ao final, mostre uma lista com: título de cada artigo/receita, se é "mais buscado" ou "tema atual" (no caso dos artigos), categoria, e a fonte de cada imagem usada.
+- Data de publicação (obrigatório): use SEMPRE a data real atual do sistema no fuso America/Sao_Paulo (nunca uma data manual, fixa, futura ou retroativa) para: o campo `date` em `site-data.js` (tanto ARTICLES quanto RECIPES), a linha "Atualizado em" e o atributo `date` do TrustBadge em cada página, e os campos `datePublished`/`dateModified` do schema JSON-LD (formato "DD mmm AAAA" em português para os campos visíveis, ISO "AAAA-MM-DD" no JSON-LD). Atualize também o `date="..."` de qualquer card relacionado (ArticleCard) em outras páginas que aponte para o novo conteúdo.
+- Atualize o sitemap.xml para incluir as novas páginas, com `<lastmod>` também na data real atual (formato ISO "AAAA-MM-DD").
+- Ao final, mostre uma lista com: título de cada artigo/receita, se é "mais buscado" ou "tema atual" (no caso dos artigos), categoria, data de publicação usada, e a fonte de cada imagem usada.
 
-Não faça commit nem envie para o GitHub ainda — aplique tudo localmente e aguarde confirmação antes de subir.
+Depois de gerar e integrar tudo corretamente, rode o preview local para confirmar que não quebrou nada. Se estiver tudo certo, faça commit dessas mudanças com uma mensagem descritiva (ex: 'Adiciona 5 artigos e 2 receitas via gerar-fitness') e envie (push) automaticamente para o GitHub, sem pedir confirmação.
