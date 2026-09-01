@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Macronutrientes | Foco Vida Fit</title>
+  <link rel="canonical" href="https://focovidafit.com.br/calculadora-macronutrientes.dc.html" />
+  <link rel="icon" type="image/png" href="logo-foco-vida-fit.png" />
+  <meta name="description" content="Distribua suas calorias diárias entre proteína, carboidrato e gordura conforme seu objetivo. Cálculo grátis, direto no navegador." />
+  <meta property="og:title" content="Calculadora de Macronutrientes | Foco Vida Fit" />
+  <meta property="og:description" content="Distribua suas calorias diárias entre proteína, carboidrato e gordura conforme seu objetivo. Cálculo grátis, direto no navegador." />
+  <meta property="og:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <meta property="og:url" content="https://focovidafit.com.br/calculadora-macronutrientes.dc.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de Macronutrientes | Foco Vida Fit" />
+  <meta name="twitter:description" content="Distribua suas calorias diárias entre proteína, carboidrato e gordura conforme seu objetivo. Cálculo grátis, direto no navegador." />
+  <meta name="twitter:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Macronutrientes","url":"https://focovidafit.com.br/calculadora-macronutrientes.dc.html","applicationCategory":"HealthApplication","operatingSystem":"Any (navegador web)","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"provider":{"@type":"Organization","name":"Foco Vida Fit"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"De onde vem meu total de calorias diárias?","acceptedAnswer":{"@type":"Answer","text":"Use o resultado do TDEE (gasto calórico total) da calculadora de TMB e Gasto Calórico do site, ou informe manualmente sua meta calórica diária definida com um profissional."}},{"@type":"Question","name":"Por que a proteína é maior no emagrecimento?","acceptedAnswer":{"@type":"Answer","text":"Uma ingestão mais alta de proteína durante o déficit calórico ajuda a preservar massa muscular e aumenta a saciedade, dois fatores importantes para um emagrecimento mais sustentável."}},{"@type":"Question","name":"Essa distribuição de macros é fixa para todo mundo?","acceptedAnswer":{"@type":"Answer","text":"Não. É um ponto de partida razoável baseado em recomendações gerais. Necessidades individuais variam com nível de treino, preferências alimentares e orientação de um nutricionista."}}]}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>body{margin:0; background:#FAFAF7;}</style>
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+<dc-import name="BackToTop" hint-size="0,0"></dc-import>
+
+<div style="max-width:800px; margin:0 auto; padding:20px 24px 0; font-family:'Work Sans',sans-serif; font-size:13px; color:#8A9790;">
+  <a href="index.dc.html" style="color:#8A9790; text-decoration:none;">Home</a> / <a href="calculadoras.dc.html" style="color:#8A9790; text-decoration:none;">Calculadoras</a>
+</div>
+
+<article style="max-width:800px; margin:0 auto; padding:16px 24px 0;">
+  <span style="display:inline-block; margin-bottom:14px; font-family:'Work Sans',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#16A34A;">Calculadora</span>
+  <h1 style="margin:0 0 16px; font-family:'Poppins',sans-serif; font-weight:800; font-size:32px; line-height:1.25; color:#14211A;">Calculadora de Macronutrientes</h1>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33; margin-bottom:32px;">
+    <p style="margin:0 0 16px;">Macronutrientes são os três grupos de nutrientes que fornecem energia ao corpo: proteínas, carboidratos e gorduras. Além da quantidade total de calorias, a forma como elas se distribuem entre esses três grupos influencia composição corporal, saciedade e desempenho no treino.</p>
+    <p style="margin:0 0 16px;">Esta calculadora parte do seu total de calorias diárias (TDEE) e do seu objetivo — emagrecer, manter o peso ou ganhar massa — para sugerir uma distribuição de macros em gramas e em percentual, seguindo faixas de referência comumente usadas em nutrição esportiva.</p>
+    <p style="margin:0;">Se ainda não sabe seu TDEE, calcule primeiro na <a href="calculadora-tmb-gasto-calorico.dc.html" style="color:#16A34A; font-weight:600; text-decoration:none;">calculadora de TMB e Gasto Calórico</a> e traga o resultado para cá.</p>
+  </div>
+
+  <div style="background:#fff; border:1px solid #E4E8E2; border-radius:16px; padding:28px 24px; margin-bottom:32px;">
+    <h2 style="margin:0 0 20px; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">Calcule seus macros</h2>
+    <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:16px;">
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Total de calorias diárias (TDEE)</label>
+        <input value="{{ calorias }}" onInput="{{ onCaloriasChange }}" type="number" step="1" min="800" max="8000" placeholder="Ex: 2200" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+      </div>
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Objetivo</label>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" onClick="{{ onObjEmagrecer }}" style="{{ objEmagrecerStyle }}">Emagrecer</button>
+          <button type="button" onClick="{{ onObjManter }}" style="{{ objManterStyle }}">Manter peso</button>
+          <button type="button" onClick="{{ onObjGanhar }}" style="{{ objGanharStyle }}">Ganhar massa</button>
+        </div>
+      </div>
+      <sc-if value="{{ hasErro }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0; color:#DC2626; font-family:'Work Sans',sans-serif; font-size:13.5px;">{{ erro }}</p>
+      </sc-if>
+      <button type="submit" style="align-self:flex-start; padding:13px 30px; border-radius:999px; border:none; background:#16A34A; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">Calcular macros</button>
+    </form>
+
+    <sc-if value="{{ hasResultado }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:24px; padding-top:24px; border-top:1px solid #E4E8E2;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;">
+          <div style="background:#F0FDF4; border-radius:10px; padding:16px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:12px; color:#5B6B60; margin-bottom:4px;">Proteína ({{ resultado.proteinaPct }}%)</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:#16A34A;">{{ resultado.proteinaG }} g</div>
+          </div>
+          <div style="background:#FFF7ED; border-radius:10px; padding:16px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:12px; color:#5B6B60; margin-bottom:4px;">Carboidrato ({{ resultado.carboPct }}%)</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:#F97316;">{{ resultado.carboG }} g</div>
+          </div>
+          <div style="background:#F1F5F0; border-radius:10px; padding:16px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:12px; color:#5B6B60; margin-bottom:4px;">Gordura ({{ resultado.gorduraPct }}%)</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:#14211A;">{{ resultado.gorduraG }} g</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33;">
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como usar</h2>
+    <ol style="margin:0 0 28px; padding-left:22px;">
+      <li style="margin-bottom:8px;">Informe seu total de calorias diárias (TDEE) — calcule na calculadora de TMB se ainda não souber.</li>
+      <li style="margin-bottom:8px;">Selecione seu objetivo: emagrecer, manter o peso ou ganhar massa.</li>
+      <li>Clique em "Calcular macros" para ver a distribuição em gramas e percentual.</li>
+    </ol>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como interpretar o resultado</h2>
+    <p style="margin:0 0 16px;">A calculadora usa proteína e carboidrato a 4 kcal por grama e gordura a 9 kcal por grama, faixas de referência comuns em nutrição esportiva:</p>
+    <ul style="margin:0 0 28px; padding-left:22px;">
+      <li style="margin-bottom:8px;"><strong>Emagrecer:</strong> mais proteína (ajuda a preservar massa muscular e aumenta saciedade durante o déficit calórico).</li>
+      <li style="margin-bottom:8px;"><strong>Manter peso:</strong> distribuição equilibrada entre os três macronutrientes.</li>
+      <li><strong>Ganhar massa:</strong> mais carboidrato (energia extra para sustentar treinos mais intensos e o superávit calórico).</li>
+    </ul>
+
+    <div style="margin:0 0 28px; padding:16px 20px; background:#FFF7ED; border:1px solid #FED7AA; border-radius:12px; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.6; color:#9A3412;">
+      <strong>Aviso:</strong> este resultado é uma estimativa e não substitui avaliação, diagnóstico ou acompanhamento de um profissional de saúde qualificado (médico, nutricionista ou educador físico). Todo o cálculo acontece no seu navegador — nenhum dado é enviado a nenhum servidor.
+    </div>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Perguntas frequentes</h2>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">De onde vem meu total de calorias diárias?</div>
+      <p style="margin:0;">Use o resultado do TDEE da calculadora de TMB e Gasto Calórico do site, ou uma meta calórica definida com um profissional.</p>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Por que a proteína é maior no emagrecimento?</div>
+      <p style="margin:0;">Ajuda a preservar massa muscular e aumenta a saciedade — dois fatores importantes para um emagrecimento mais sustentável.</p>
+    </div>
+    <div>
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Essa distribuição é fixa para todo mundo?</div>
+      <p style="margin:0;">Não. É um ponto de partida razoável — necessidades individuais variam e o ideal é orientação de um nutricionista.</p>
+    </div>
+  </div>
+
+  <div style="margin:32px 0;">
+    <dc-import name="AdSlot" label="336×280" height="280" max-width="336px" margin="0 auto" hint-size="336px,280px"></dc-import>
+  </div>
+
+  <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 20px;">Artigos relacionados</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-bottom:56px;">
+    <dc-import name="ArticleCard" href="artigo-quanto-proteina-por-dia-voce-precisa.dc.html" image-id="img-rel-proteina-macros" image-src="images/alimentos-proteicos-variados.jpg" image-alt="Prato circular com grãos, castanhas, feijões e amendoim, fontes de proteína" image-placeholder="Foto: alimentos proteicos" category="Nutrição" title="Quanto de proteína por dia você realmente precisa" excerpt="Recomendações por nível de atividade." read-time="9 min" date="23 ago 2026" hint-size="100%,320px"></dc-import>
+    <dc-import name="ArticleCard" href="artigo-dieta-low-carb-guia-completo.dc.html" image-id="img-rel-lowcarb-macros" image-src="images/prato-frango-grelhado-vegetais-low-carb.jpg" image-alt="Prato com frango grelhado, brócolis e abobrinha, refeição low carb" image-placeholder="Foto: refeição low carb" category="Nutrição" title="Dieta low carb: como funciona, prós, contras e para quem é indicada" excerpt="Reduzir carboidratos pode ajudar, mas não é para todo mundo." read-time="11 min" date="22 ago 2026" hint-size="100%,320px"></dc-import>
+  </div>
+</article>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const MACRO_SPLITS = {
+  emagrecer: { proteina: 0.35, carbo: 0.35, gordura: 0.30 },
+  manter: { proteina: 0.30, carbo: 0.40, gordura: 0.30 },
+  ganhar: { proteina: 0.25, carbo: 0.50, gordura: 0.25 },
+};
+class Component extends DCLogic {
+  state = { calorias: '', objetivo: 'emagrecer', resultado: null, erro: '' };
+  renderVals() {
+    const { calorias, objetivo, resultado, erro } = this.state;
+    const btnBase = { padding: '10px 20px', borderRadius: '999px', fontFamily: "'Work Sans',sans-serif", fontWeight: 600, fontSize: '14px', cursor: 'pointer' };
+    const styleFor = (key) => ({ ...btnBase, border: objetivo === key ? 'none' : '1px solid #D9E2DA', background: objetivo === key ? '#16A34A' : '#fff', color: objetivo === key ? '#fff' : '#14211A' });
+    return {
+      calorias, resultado, erro,
+      hasErro: !!erro,
+      hasResultado: !!resultado,
+      objEmagrecerStyle: styleFor('emagrecer'),
+      objManterStyle: styleFor('manter'),
+      objGanharStyle: styleFor('ganhar'),
+      onObjEmagrecer: () => this.setState({ objetivo: 'emagrecer' }),
+      onObjManter: () => this.setState({ objetivo: 'manter' }),
+      onObjGanhar: () => this.setState({ objetivo: 'ganhar' }),
+      onCaloriasChange: (e) => this.setState({ calorias: e.target.value }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        const cal = parseFloat(String(this.state.calorias).replace(',', '.'));
+        if (!cal || cal <= 0) {
+          this.setState({ erro: 'Informe um total de calorias diárias válido, maior que zero.', resultado: null });
+          return;
+        }
+        const split = MACRO_SPLITS[this.state.objetivo];
+        const proteinaKcal = cal * split.proteina;
+        const carboKcal = cal * split.carbo;
+        const gorduraKcal = cal * split.gordura;
+        this.setState({
+          erro: '',
+          resultado: {
+            proteinaG: Math.round(proteinaKcal / 4),
+            carboG: Math.round(carboKcal / 4),
+            gorduraG: Math.round(gorduraKcal / 9),
+            proteinaPct: Math.round(split.proteina * 100),
+            carboPct: Math.round(split.carbo * 100),
+            gorduraPct: Math.round(split.gordura * 100),
+          },
+        });
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

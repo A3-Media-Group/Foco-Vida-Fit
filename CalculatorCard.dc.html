@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<a href="{{ href }}" style="display:flex; flex-direction:column; gap:12px; text-decoration:none; border:1px solid #E4E8E2; border-radius:14px; padding:22px 20px; background:#fff; height:100%; box-sizing:border-box;">
+  <div style="width:52px; height:52px; border-radius:14px; background:{{ iconBg }}; display:flex; align-items:center; justify-content:center; font-size:24px;">{{ icon }}</div>
+  <h3 style="margin:0; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; line-height:1.35; color:#14211A;">{{ title }}</h3>
+  <p style="margin:0; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.55; color:#5B6B60; flex:1;">{{ description }}</p>
+  <span style="font-family:'Work Sans',sans-serif; font-size:13px; font-weight:700; color:#16A34A;">Calcular →</span>
+</a>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;href&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;#&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;icon&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;📏&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;iconBg&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;#F1F5F0&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;title&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Nome da calculadora&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;description&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;Descrição breve.&quot;, &quot;tsType&quot;: &quot;string&quot;}}"></script>
+</body>
+</html>

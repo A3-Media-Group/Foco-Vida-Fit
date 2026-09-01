@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de TMB e Gasto Calórico (TDEE) | FVF</title>
+  <link rel="canonical" href="https://focovidafit.com.br/calculadora-tmb-gasto-calorico.dc.html" />
+  <link rel="icon" type="image/png" href="logo-foco-vida-fit.png" />
+  <meta name="description" content="Calcule sua TMB e seu gasto calórico diário (TDEE) pela fórmula de Mifflin-St Jeor, com fator de atividade. Grátis, sem enviar dados." />
+  <meta property="og:title" content="Calculadora de TMB e Gasto Calórico (TDEE) | FVF" />
+  <meta property="og:description" content="Calcule sua TMB e seu gasto calórico diário (TDEE) pela fórmula de Mifflin-St Jeor, com fator de atividade. Grátis, sem enviar dados." />
+  <meta property="og:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <meta property="og:url" content="https://focovidafit.com.br/calculadora-tmb-gasto-calorico.dc.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de TMB e Gasto Calórico (TDEE) | FVF" />
+  <meta name="twitter:description" content="Calcule sua TMB e seu gasto calórico diário (TDEE) pela fórmula de Mifflin-St Jeor, com fator de atividade. Grátis, sem enviar dados." />
+  <meta name="twitter:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de TMB e Gasto Calórico (TDEE)","url":"https://focovidafit.com.br/calculadora-tmb-gasto-calorico.dc.html","applicationCategory":"HealthApplication","operatingSystem":"Any (navegador web)","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"provider":{"@type":"Organization","name":"Foco Vida Fit"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual a diferença entre TMB e TDEE?","acceptedAnswer":{"@type":"Answer","text":"TMB (Taxa de Metabolismo Basal) é a energia que o corpo gasta em repouso completo, só para manter funções vitais. TDEE (gasto calórico total diário) soma a TMB à energia gasta com atividades do dia, incluindo exercício."}},{"@type":"Question","name":"Por que usar a fórmula de Mifflin-St Jeor?","acceptedAnswer":{"@type":"Answer","text":"Estudos de validação mostram que a fórmula de Mifflin-St Jeor tende a ser mais precisa que fórmulas mais antigas, como a de Harris-Benedict, para estimar a taxa metabólica basal da maioria dos adultos."}},{"@type":"Question","name":"O resultado do TDEE é exato?","acceptedAnswer":{"@type":"Answer","text":"Não. É uma estimativa baseada em médias populacionais. O gasto calórico real varia de pessoa para pessoa e pode ser ajustado com o tempo, observando a evolução real do peso."}}]}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>body{margin:0; background:#FAFAF7;}</style>
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+<dc-import name="BackToTop" hint-size="0,0"></dc-import>
+
+<div style="max-width:800px; margin:0 auto; padding:20px 24px 0; font-family:'Work Sans',sans-serif; font-size:13px; color:#8A9790;">
+  <a href="index.dc.html" style="color:#8A9790; text-decoration:none;">Home</a> / <a href="calculadoras.dc.html" style="color:#8A9790; text-decoration:none;">Calculadoras</a>
+</div>
+
+<article style="max-width:800px; margin:0 auto; padding:16px 24px 0;">
+  <span style="display:inline-block; margin-bottom:14px; font-family:'Work Sans',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#16A34A;">Calculadora</span>
+  <h1 style="margin:0 0 16px; font-family:'Poppins',sans-serif; font-weight:800; font-size:32px; line-height:1.25; color:#14211A;">Calculadora de TMB e Gasto Calórico Diário (TDEE)</h1>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33; margin-bottom:32px;">
+    <p style="margin:0 0 16px;">A Taxa de Metabolismo Basal (TMB) é a quantidade de energia que o corpo gasta em repouso absoluto, apenas para manter funções vitais como respiração, circulação e temperatura corporal. Já o TDEE (do inglês <em>Total Daily Energy Expenditure</em>, ou gasto calórico total diário) soma a TMB à energia gasta com todas as atividades do dia, do trabalho ao treino.</p>
+    <p style="margin:0 0 16px;">Esta calculadora usa a fórmula de Mifflin-St Jeor, considerada por estudos de validação uma das mais precisas para estimar a TMB da maioria dos adultos, hoje amplamente adotada por nutricionistas. O TDEE é obtido multiplicando a TMB por um fator de atividade física.</p>
+    <p style="margin:0;">Saber seu TDEE é o ponto de partida para planejar objetivos de peso: comer abaixo dele gera déficit calórico (perda de peso), próximo dele mantém o peso, e acima dele gera superávit (ganho de peso). Depois de calcular, use o resultado na <a href="calculadora-macronutrientes.dc.html" style="color:#16A34A; font-weight:600; text-decoration:none;">calculadora de macronutrientes</a> para distribuir as calorias entre proteína, carboidrato e gordura.</p>
+  </div>
+
+  <div style="background:#fff; border:1px solid #E4E8E2; border-radius:16px; padding:28px 24px; margin-bottom:32px;">
+    <h2 style="margin:0 0 20px; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">Calcule sua TMB e TDEE</h2>
+    <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:16px;">
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Sexo biológico</label>
+        <div style="display:flex; gap:10px;">
+          <button type="button" onClick="{{ onSexoHomem }}" style="{{ sexoHomemStyle }}">Homem</button>
+          <button type="button" onClick="{{ onSexoMulher }}" style="{{ sexoMulherStyle }}">Mulher</button>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:16px;">
+        <div>
+          <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Idade (anos)</label>
+          <input value="{{ idade }}" onInput="{{ onIdadeChange }}" type="number" step="1" min="15" max="100" placeholder="Ex: 30" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+        </div>
+        <div>
+          <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Peso (kg)</label>
+          <input value="{{ peso }}" onInput="{{ onPesoChange }}" type="number" step="0.1" min="1" max="400" placeholder="Ex: 70" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+        </div>
+        <div>
+          <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Altura (cm)</label>
+          <input value="{{ altura }}" onInput="{{ onAlturaChange }}" type="number" step="0.1" min="50" max="260" placeholder="Ex: 170" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+        </div>
+      </div>
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Nível de atividade física</label>
+        <select value="{{ atividade }}" onChange="{{ onAtividadeChange }}" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none; background:#fff;">
+          <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
+          <option value="1.375">Leve (exercício leve, 1 a 3 dias/semana)</option>
+          <option value="1.55">Moderado (exercício moderado, 3 a 5 dias/semana)</option>
+          <option value="1.725">Intenso (exercício intenso, 6 a 7 dias/semana)</option>
+          <option value="1.9">Atleta (exercício muito intenso ou trabalho físico)</option>
+        </select>
+      </div>
+      <sc-if value="{{ hasErro }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0; color:#DC2626; font-family:'Work Sans',sans-serif; font-size:13.5px;">{{ erro }}</p>
+      </sc-if>
+      <button type="submit" style="align-self:flex-start; padding:13px 30px; border-radius:999px; border:none; background:#16A34A; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">Calcular</button>
+    </form>
+
+    <sc-if value="{{ hasResultado }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:24px; padding-top:24px; border-top:1px solid #E4E8E2;">
+        <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; text-align:center; margin-bottom:20px;">
+          <div>
+            <div style="font-family:'Work Sans',sans-serif; font-size:13px; color:#5B6B60;">Taxa Metabólica Basal (TMB)</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:28px; color:#14211A;">{{ resultado.tmb }} kcal</div>
+          </div>
+          <div>
+            <div style="font-family:'Work Sans',sans-serif; font-size:13px; color:#5B6B60;">Gasto Calórico Total (TDEE)</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:28px; color:#16A34A;">{{ resultado.tdee }} kcal</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;">
+          <div style="background:#F1F5F0; border-radius:10px; padding:14px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:11.5px; color:#5B6B60; margin-bottom:4px;">Para perder peso</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:18px; color:#14211A;">{{ resultado.perder }} kcal</div>
+          </div>
+          <div style="background:#F1F5F0; border-radius:10px; padding:14px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:11.5px; color:#5B6B60; margin-bottom:4px;">Para manter o peso</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:18px; color:#14211A;">{{ resultado.manter }} kcal</div>
+          </div>
+          <div style="background:#F1F5F0; border-radius:10px; padding:14px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:11.5px; color:#5B6B60; margin-bottom:4px;">Para ganhar peso</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:18px; color:#14211A;">{{ resultado.ganhar }} kcal</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33;">
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como usar</h2>
+    <ol style="margin:0 0 28px; padding-left:22px;">
+      <li style="margin-bottom:8px;">Selecione seu sexo biológico (a fórmula usa constantes diferentes para homens e mulheres).</li>
+      <li style="margin-bottom:8px;">Informe idade, peso e altura.</li>
+      <li style="margin-bottom:8px;">Escolha o nível de atividade física que melhor descreve sua rotina.</li>
+      <li>Clique em "Calcular" para ver sua TMB, seu TDEE e as estimativas para perder, manter ou ganhar peso.</li>
+    </ol>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como interpretar o resultado</h2>
+    <p style="margin:0 0 28px;">O valor de "manter o peso" é seu TDEE — a quantidade de calorias que, em média, mantém seu peso estável. "Perder peso" aplica um déficit de cerca de 500 kcal/dia (ritmo de emagrecimento moderado e sustentável, próximo de 0,5 kg por semana). "Ganhar peso" aplica um superávit de cerca de 400 kcal/dia, indicado para quem busca ganho de massa muscular de forma controlada.</p>
+
+    <div style="margin:0 0 28px; padding:16px 20px; background:#FFF7ED; border:1px solid #FED7AA; border-radius:12px; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.6; color:#9A3412;">
+      <strong>Aviso:</strong> este resultado é uma estimativa e não substitui avaliação, diagnóstico ou acompanhamento de um profissional de saúde qualificado (médico, nutricionista ou educador físico). Todo o cálculo acontece no seu navegador — nenhum dado é enviado a nenhum servidor.
+    </div>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Perguntas frequentes</h2>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Qual a diferença entre TMB e TDEE?</div>
+      <p style="margin:0;">TMB é a energia gasta em repouso completo. TDEE soma a TMB à energia gasta com atividades do dia, incluindo exercício.</p>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Por que usar a fórmula de Mifflin-St Jeor?</div>
+      <p style="margin:0;">Estudos de validação mostram que ela tende a ser mais precisa que fórmulas mais antigas, como a de Harris-Benedict, para a maioria dos adultos.</p>
+    </div>
+    <div>
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">O resultado do TDEE é exato?</div>
+      <p style="margin:0;">Não. É uma estimativa baseada em médias populacionais — o gasto real varia e pode ser ajustado observando a evolução do peso ao longo do tempo.</p>
+    </div>
+  </div>
+
+  <div style="margin:32px 0;">
+    <dc-import name="AdSlot" label="336×280" height="280" max-width="336px" margin="0 auto" hint-size="336px,280px"></dc-import>
+  </div>
+
+  <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 20px;">Artigos relacionados</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-bottom:56px;">
+    <dc-import name="ArticleCard" href="artigo-quantas-calorias-voce-precisa-comer-por-dia.dc.html" image-id="img-rel-calorias-tdee" image-src="images/prato-comida-balanca-cozinha.jpg" image-alt="Prato de comida sendo pesado em balança de cozinha" image-placeholder="Foto: prato na balança" category="Nutrição" title="Quantas calorias você precisa comer por dia: guia para calcular seu TDEE" excerpt="Aprenda a calcular seu gasto calórico total passo a passo." read-time="11 min" date="26 ago 2026" hint-size="100%,320px"></dc-import>
+    <dc-import name="ArticleCard" href="artigo-deficit-calorico-emagrecimento-saudavel.dc.html" image-id="img-rel-deficit-tdee" image-src="images/pessoa-correndo-parque-emagrecimento.jpg" image-alt="Homem correndo em parque arborizado, representando rotina de exercícios para emagrecimento" image-placeholder="Foto: déficit calórico" category="Emagrecimento" title="Déficit calórico: como emagrecer de forma saudável e sustentável" excerpt="A base de qualquer processo de emagrecimento eficaz." read-time="9 min" date="22 ago 2026" hint-size="100%,320px"></dc-import>
+  </div>
+</article>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sexo: 'homem', idade: '', peso: '', altura: '', atividade: '1.2', resultado: null, erro: '' };
+  renderVals() {
+    const { sexo, idade, peso, altura, atividade, resultado, erro } = this.state;
+    const btnBase = { padding: '10px 22px', borderRadius: '999px', fontFamily: "'Work Sans',sans-serif", fontWeight: 600, fontSize: '14px', cursor: 'pointer' };
+    return {
+      idade, peso, altura, atividade, resultado, erro,
+      hasErro: !!erro,
+      hasResultado: !!resultado,
+      sexoHomemStyle: { ...btnBase, border: sexo === 'homem' ? 'none' : '1px solid #D9E2DA', background: sexo === 'homem' ? '#16A34A' : '#fff', color: sexo === 'homem' ? '#fff' : '#14211A' },
+      sexoMulherStyle: { ...btnBase, border: sexo === 'mulher' ? 'none' : '1px solid #D9E2DA', background: sexo === 'mulher' ? '#16A34A' : '#fff', color: sexo === 'mulher' ? '#fff' : '#14211A' },
+      onSexoHomem: () => this.setState({ sexo: 'homem' }),
+      onSexoMulher: () => this.setState({ sexo: 'mulher' }),
+      onIdadeChange: (e) => this.setState({ idade: e.target.value }),
+      onPesoChange: (e) => this.setState({ peso: e.target.value }),
+      onAlturaChange: (e) => this.setState({ altura: e.target.value }),
+      onAtividadeChange: (e) => this.setState({ atividade: e.target.value }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        const idd = parseFloat(String(this.state.idade).replace(',', '.'));
+        const p = parseFloat(String(this.state.peso).replace(',', '.'));
+        const a = parseFloat(String(this.state.altura).replace(',', '.'));
+        const fator = parseFloat(this.state.atividade);
+        if (!idd || !p || !a || idd <= 0 || p <= 0 || a <= 0) {
+          this.setState({ erro: 'Preencha idade, peso e altura com valores válidos, maiores que zero.', resultado: null });
+          return;
+        }
+        let tmb = 10 * p + 6.25 * a - 5 * idd;
+        tmb = this.state.sexo === 'homem' ? tmb + 5 : tmb - 161;
+        const tdee = tmb * fator;
+        this.setState({
+          erro: '',
+          resultado: {
+            tmb: Math.round(tmb),
+            tdee: Math.round(tdee),
+            perder: Math.round(tdee - 500),
+            manter: Math.round(tdee),
+            ganhar: Math.round(tdee + 400),
+          },
+        });
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

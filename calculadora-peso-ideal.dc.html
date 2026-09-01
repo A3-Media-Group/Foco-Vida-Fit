@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Peso Ideal | Foco Vida Fit</title>
+  <link rel="canonical" href="https://focovidafit.com.br/calculadora-peso-ideal.dc.html" />
+  <link rel="icon" type="image/png" href="logo-foco-vida-fit.png" />
+  <meta name="description" content="Calcule sua faixa de peso ideal pelas fórmulas de Devine, Lorentz e pelo IMC saudável, a partir da sua altura e sexo. Grátis, no navegador." />
+  <meta property="og:title" content="Calculadora de Peso Ideal | Foco Vida Fit" />
+  <meta property="og:description" content="Calcule sua faixa de peso ideal pelas fórmulas de Devine, Lorentz e pelo IMC saudável, a partir da sua altura e sexo. Grátis, no navegador." />
+  <meta property="og:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <meta property="og:url" content="https://focovidafit.com.br/calculadora-peso-ideal.dc.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de Peso Ideal | Foco Vida Fit" />
+  <meta name="twitter:description" content="Calcule sua faixa de peso ideal pelas fórmulas de Devine, Lorentz e pelo IMC saudável, a partir da sua altura e sexo. Grátis, no navegador." />
+  <meta name="twitter:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Peso Ideal","url":"https://focovidafit.com.br/calculadora-peso-ideal.dc.html","applicationCategory":"HealthApplication","operatingSystem":"Any (navegador web)","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"provider":{"@type":"Organization","name":"Foco Vida Fit"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Por que os resultados de Devine e Lorentz são diferentes?","acceptedAnswer":{"@type":"Answer","text":"São fórmulas matemáticas distintas, criadas em épocas e contextos diferentes. Nenhuma é 'a correta' — servem como referências aproximadas, não como metas exatas e obrigatórias."}},{"@type":"Question","name":"O peso ideal calculado aqui considera massa muscular?","acceptedAnswer":{"@type":"Answer","text":"Não. Essas fórmulas usam apenas altura e sexo, sem considerar composição corporal. Pessoas muito musculosas podem pesar mais que o intervalo sugerido sem que isso seja um problema de saúde."}},{"@type":"Question","name":"Devo tentar atingir exatamente esse peso?","acceptedAnswer":{"@type":"Answer","text":"Não necessariamente. O resultado é uma referência geral — uma faixa saudável de peso, avaliada junto com composição corporal e orientação profissional, costuma ser mais útil do que um número único e fixo."}}]}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>body{margin:0; background:#FAFAF7;}</style>
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+<dc-import name="BackToTop" hint-size="0,0"></dc-import>
+
+<div style="max-width:800px; margin:0 auto; padding:20px 24px 0; font-family:'Work Sans',sans-serif; font-size:13px; color:#8A9790;">
+  <a href="index.dc.html" style="color:#8A9790; text-decoration:none;">Home</a> / <a href="calculadoras.dc.html" style="color:#8A9790; text-decoration:none;">Calculadoras</a>
+</div>
+
+<article style="max-width:800px; margin:0 auto; padding:16px 24px 0;">
+  <span style="display:inline-block; margin-bottom:14px; font-family:'Work Sans',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#16A34A;">Calculadora</span>
+  <h1 style="margin:0 0 16px; font-family:'Poppins',sans-serif; font-weight:800; font-size:32px; line-height:1.25; color:#14211A;">Calculadora de Peso Ideal</h1>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33; margin-bottom:32px;">
+    <p style="margin:0 0 16px;">"Peso ideal" não é um número único e mágico — é melhor entendido como uma faixa de referência. Esta calculadora reúne três formas diferentes de estimar essa faixa a partir da sua altura e sexo: as fórmulas clássicas de Devine e de Lorentz, e o intervalo de peso saudável segundo o IMC.</p>
+    <p style="margin:0 0 16px;">A fórmula de Devine foi originalmente criada para calcular dosagens de medicamentos e depois passou a ser usada como referência de peso corporal. A fórmula de Lorentz é outra estimativa clássica, mais antiga, com um cálculo levemente diferente. Nenhuma das duas considera composição corporal.</p>
+    <p style="margin:0;">Por isso, o resultado é melhor interpretado junto com a <a href="calculadora-imc.dc.html" style="color:#16A34A; font-weight:600; text-decoration:none;">calculadora de IMC</a> e a <a href="calculadora-percentual-gordura-corporal.dc.html" style="color:#16A34A; font-weight:600; text-decoration:none;">calculadora de percentual de gordura corporal</a>, que dão uma visão mais completa da composição corporal.</p>
+  </div>
+
+  <div style="background:#fff; border:1px solid #E4E8E2; border-radius:16px; padding:28px 24px; margin-bottom:32px;">
+    <h2 style="margin:0 0 20px; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">Calcule seu peso ideal</h2>
+    <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:16px;">
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Sexo biológico</label>
+        <div style="display:flex; gap:10px;">
+          <button type="button" onClick="{{ onSexoHomem }}" style="{{ sexoHomemStyle }}">Homem</button>
+          <button type="button" onClick="{{ onSexoMulher }}" style="{{ sexoMulherStyle }}">Mulher</button>
+        </div>
+      </div>
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Altura (cm)</label>
+        <input value="{{ altura }}" onInput="{{ onAlturaChange }}" type="number" step="0.1" min="120" max="230" placeholder="Ex: 170" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+      </div>
+      <sc-if value="{{ hasErro }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0; color:#DC2626; font-family:'Work Sans',sans-serif; font-size:13.5px;">{{ erro }}</p>
+      </sc-if>
+      <button type="submit" style="align-self:flex-start; padding:13px 30px; border-radius:999px; border:none; background:#16A34A; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">Calcular</button>
+    </form>
+
+    <sc-if value="{{ hasResultado }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:24px; padding-top:24px; border-top:1px solid #E4E8E2;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:16px;">
+          <div style="background:#F1F5F0; border-radius:10px; padding:14px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:11.5px; color:#5B6B60; margin-bottom:4px;">Fórmula de Devine</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:20px; color:#14211A;">{{ resultado.devine }} kg</div>
+          </div>
+          <div style="background:#F1F5F0; border-radius:10px; padding:14px; text-align:center;">
+            <div style="font-family:'Work Sans',sans-serif; font-size:11.5px; color:#5B6B60; margin-bottom:4px;">Fórmula de Lorentz</div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:20px; color:#14211A;">{{ resultado.lorentz }} kg</div>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Work Sans',sans-serif; font-size:13px; color:#5B6B60; margin-bottom:4px;">Faixa saudável pelo IMC (18,5 a 24,9)</div>
+          <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:24px; color:#16A34A;">{{ resultado.imcMin }} – {{ resultado.imcMax }} kg</div>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33;">
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como usar</h2>
+    <ol style="margin:0 0 28px; padding-left:22px;">
+      <li style="margin-bottom:8px;">Selecione seu sexo biológico.</li>
+      <li style="margin-bottom:8px;">Informe sua altura em centímetros.</li>
+      <li>Clique em "Calcular" para ver o resultado nas três referências.</li>
+    </ol>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como interpretar o resultado</h2>
+    <p style="margin:0 0 28px;">Nenhum dos três números é "o" peso certo — são referências que costumam convergir para uma faixa parecida. A faixa saudável pelo IMC costuma ser a mais ampla e a mais usada clinicamente. Se seu peso atual estiver fora dessas faixas, isso não é um diagnóstico — é apenas um ponto de partida para conversar com um profissional de saúde.</p>
+
+    <div style="margin:0 0 28px; padding:16px 20px; background:#FFF7ED; border:1px solid #FED7AA; border-radius:12px; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.6; color:#9A3412;">
+      <strong>Aviso:</strong> este resultado é uma estimativa e não substitui avaliação, diagnóstico ou acompanhamento de um profissional de saúde qualificado (médico, nutricionista ou educador físico). Todo o cálculo acontece no seu navegador — nenhum dado é enviado a nenhum servidor.
+    </div>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Perguntas frequentes</h2>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Por que os resultados de Devine e Lorentz são diferentes?</div>
+      <p style="margin:0;">São fórmulas matemáticas distintas, de épocas diferentes. Nenhuma é "a correta" — servem como referências aproximadas, não metas exatas.</p>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">O peso ideal calculado aqui considera massa muscular?</div>
+      <p style="margin:0;">Não. Usa apenas altura e sexo. Pessoas muito musculosas podem pesar mais que o sugerido sem que isso seja um problema de saúde.</p>
+    </div>
+    <div>
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Devo tentar atingir exatamente esse peso?</div>
+      <p style="margin:0;">Não necessariamente. Uma faixa saudável avaliada junto com composição corporal e orientação profissional costuma ser mais útil que um número fixo.</p>
+    </div>
+  </div>
+
+  <div style="margin:32px 0;">
+    <dc-import name="AdSlot" label="336×280" height="280" max-width="336px" margin="0 auto" hint-size="336px,280px"></dc-import>
+  </div>
+
+  <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 20px;">Artigos relacionados</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-bottom:56px;">
+    <dc-import name="ArticleCard" href="artigo-efeito-plato-emagrecimento.dc.html" image-id="img-rel-plato-peso" image-src="images/pessoa-balanca-pesagem.jpg" image-alt="Pés sobre uma balança digital durante pesagem corporal" image-placeholder="Foto: pesagem" category="Emagrecimento" title="Efeito platô no emagrecimento: por que o peso para de descer e como retomar" excerpt="Causas fisiológicas e estratégias para voltar a evoluir." read-time="8 min" date="22 ago 2026" hint-size="100%,320px"></dc-import>
+    <dc-import name="ArticleCard" href="artigo-efeito-sanfona-reganho-peso-ciencia.dc.html" image-id="img-rel-sanfona-peso" image-src="images/pessoa-balanca-peso-oscilando.jpg" image-alt="Pessoa sobre balança em momento de pesagem corporal" image-placeholder="Foto: balança" category="Emagrecimento" title="Efeito sanfona: o que a ciência realmente diz sobre o reganho de peso" excerpt="O que os estudos realmente mostram." read-time="10 min" date="31 ago 2026" hint-size="100%,320px"></dc-import>
+  </div>
+</article>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sexo: 'homem', altura: '', resultado: null, erro: '' };
+  renderVals() {
+    const { sexo, altura, resultado, erro } = this.state;
+    const btnBase = { padding: '10px 22px', borderRadius: '999px', fontFamily: "'Work Sans',sans-serif", fontWeight: 600, fontSize: '14px', cursor: 'pointer' };
+    return {
+      altura, resultado, erro,
+      hasErro: !!erro,
+      hasResultado: !!resultado,
+      sexoHomemStyle: { ...btnBase, border: sexo === 'homem' ? 'none' : '1px solid #D9E2DA', background: sexo === 'homem' ? '#16A34A' : '#fff', color: sexo === 'homem' ? '#fff' : '#14211A' },
+      sexoMulherStyle: { ...btnBase, border: sexo === 'mulher' ? 'none' : '1px solid #D9E2DA', background: sexo === 'mulher' ? '#16A34A' : '#fff', color: sexo === 'mulher' ? '#fff' : '#14211A' },
+      onSexoHomem: () => this.setState({ sexo: 'homem' }),
+      onSexoMulher: () => this.setState({ sexo: 'mulher' }),
+      onAlturaChange: (e) => this.setState({ altura: e.target.value }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        const a = parseFloat(String(this.state.altura).replace(',', '.'));
+        if (!a || a <= 0) {
+          this.setState({ erro: 'Informe uma altura válida, maior que zero.', resultado: null });
+          return;
+        }
+        const isMulher = this.state.sexo === 'mulher';
+        const polegadas = a / 2.54;
+        const devine = isMulher ? 45.5 + 2.3 * (polegadas - 60) : 50 + 2.3 * (polegadas - 60);
+        const lorentz = isMulher ? a - 100 - ((a - 150) / 2.5) : a - 100 - ((a - 150) / 4);
+        const alturaM = a / 100;
+        const imcMin = 18.5 * alturaM * alturaM;
+        const imcMax = 24.9 * alturaM * alturaM;
+        this.setState({
+          erro: '',
+          resultado: {
+            devine: Math.max(devine, 0).toFixed(1),
+            lorentz: Math.max(lorentz, 0).toFixed(1),
+            imcMin: imcMin.toFixed(1),
+            imcMax: imcMax.toFixed(1),
+          },
+        });
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

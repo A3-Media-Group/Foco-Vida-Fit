@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Água Diária | Foco Vida Fit</title>
+  <link rel="canonical" href="https://focovidafit.com.br/calculadora-agua-diaria.dc.html" />
+  <link rel="icon" type="image/png" href="logo-foco-vida-fit.png" />
+  <meta name="description" content="Descubra quantos litros de água por dia seu corpo precisa, com base no peso e no nível de atividade física. Grátis, sem enviar dados." />
+  <meta property="og:title" content="Calculadora de Água Diária | Foco Vida Fit" />
+  <meta property="og:description" content="Descubra quantos litros de água por dia seu corpo precisa, com base no peso e no nível de atividade física. Grátis, sem enviar dados." />
+  <meta property="og:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <meta property="og:url" content="https://focovidafit.com.br/calculadora-agua-diaria.dc.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de Água Diária | Foco Vida Fit" />
+  <meta name="twitter:description" content="Descubra quantos litros de água por dia seu corpo precisa, com base no peso e no nível de atividade física. Grátis, sem enviar dados." />
+  <meta name="twitter:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Ingestão de Água Diária","url":"https://focovidafit.com.br/calculadora-agua-diaria.dc.html","applicationCategory":"HealthApplication","operatingSystem":"Any (navegador web)","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"provider":{"@type":"Organization","name":"Foco Vida Fit"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O café e outras bebidas contam para a meta de água?","acceptedAnswer":{"@type":"Answer","text":"Líquidos em geral contribuem para a hidratação total, mas água pura continua sendo a fonte mais recomendada, sem açúcar, cafeína ou calorias extras."}},{"@type":"Question","name":"Essa quantidade já inclui a água dos alimentos?","acceptedAnswer":{"@type":"Answer","text":"Não. O resultado se refere à ingestão de líquidos. Frutas, verduras e outros alimentos também contribuem com uma parte da hidratação diária total."}},{"@type":"Question","name":"Preciso beber mais água em dias muito quentes?","acceptedAnswer":{"@type":"Answer","text":"Sim. Calor, suor excessivo e maior altitude aumentam a necessidade de água além da estimativa padrão desta calculadora."}}]}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>body{margin:0; background:#FAFAF7;}</style>
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+<dc-import name="BackToTop" hint-size="0,0"></dc-import>
+
+<div style="max-width:800px; margin:0 auto; padding:20px 24px 0; font-family:'Work Sans',sans-serif; font-size:13px; color:#8A9790;">
+  <a href="index.dc.html" style="color:#8A9790; text-decoration:none;">Home</a> / <a href="calculadoras.dc.html" style="color:#8A9790; text-decoration:none;">Calculadoras</a>
+</div>
+
+<article style="max-width:800px; margin:0 auto; padding:16px 24px 0;">
+  <span style="display:inline-block; margin-bottom:14px; font-family:'Work Sans',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#16A34A;">Calculadora</span>
+  <h1 style="margin:0 0 16px; font-family:'Poppins',sans-serif; font-weight:800; font-size:32px; line-height:1.25; color:#14211A;">Calculadora de Ingestão de Água Diária</h1>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33; margin-bottom:32px;">
+    <p style="margin:0 0 16px;">A quantidade ideal de água varia de pessoa para pessoa, dependendo principalmente do peso corporal e do nível de atividade física. Mesmo a desidratação leve já pode afetar disposição, concentração e desempenho físico.</p>
+    <p style="margin:0 0 16px;">Esta calculadora usa uma estimativa comum em nutrição — cerca de 35 ml de água por quilo de peso corporal como base — e soma um valor extra conforme o nível de atividade física, já que o suor aumenta a necessidade de reposição de líquidos.</p>
+    <p style="margin:0;">É uma referência geral: clima, altitude, gestação, amamentação e algumas condições de saúde podem alterar a necessidade real. Veja mais no artigo sobre <a href="artigo-hidratacao-desempenho-fisico.dc.html" style="color:#16A34A; font-weight:600; text-decoration:none;">hidratação e desempenho físico</a>.</p>
+  </div>
+
+  <div style="background:#fff; border:1px solid #E4E8E2; border-radius:16px; padding:28px 24px; margin-bottom:32px;">
+    <h2 style="margin:0 0 20px; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">Calcule sua meta de água</h2>
+    <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:16px;">
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Peso (kg)</label>
+        <input value="{{ peso }}" onInput="{{ onPesoChange }}" type="number" step="0.1" min="1" max="400" placeholder="Ex: 70" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+      </div>
+      <div>
+        <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Nível de atividade física</label>
+        <select value="{{ atividade }}" onChange="{{ onAtividadeChange }}" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none; background:#fff;">
+          <option value="0">Sedentário (pouco ou nenhum exercício)</option>
+          <option value="350">Leve (exercício leve, 1 a 3 dias/semana)</option>
+          <option value="700">Moderado (exercício moderado, 3 a 5 dias/semana)</option>
+          <option value="1000">Intenso (exercício intenso quase todos os dias)</option>
+        </select>
+      </div>
+      <sc-if value="{{ hasErro }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0; color:#DC2626; font-family:'Work Sans',sans-serif; font-size:13.5px;">{{ erro }}</p>
+      </sc-if>
+      <button type="submit" style="align-self:flex-start; padding:13px 30px; border-radius:999px; border:none; background:#16A34A; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">Calcular</button>
+    </form>
+
+    <sc-if value="{{ hasResultado }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:24px; padding-top:24px; border-top:1px solid #E4E8E2; text-align:center;">
+        <div style="font-family:'Work Sans',sans-serif; font-size:13.5px; color:#5B6B60; margin-bottom:6px;">Sua meta diária estimada é</div>
+        <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:44px; color:#0891B2;">{{ resultado.litros }} L</div>
+        <div style="font-family:'Work Sans',sans-serif; font-size:13.5px; color:#5B6B60; margin-top:6px;">≈ {{ resultado.copos }} copos de 250 ml por dia</div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33;">
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como usar</h2>
+    <ol style="margin:0 0 28px; padding-left:22px;">
+      <li style="margin-bottom:8px;">Informe seu peso atual em quilogramas.</li>
+      <li style="margin-bottom:8px;">Selecione o nível de atividade física que melhor descreve sua rotina.</li>
+      <li>Clique em "Calcular" para ver sua meta diária em litros e em copos.</li>
+    </ol>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como interpretar o resultado</h2>
+    <p style="margin:0 0 28px;">O resultado é uma meta de referência para o dia a dia, distribuída ao longo do dia em vez de tomada de uma vez. Em dias muito quentes, treinos mais longos ou intensos, a necessidade real pode ser maior que a estimativa.</p>
+
+    <div style="margin:0 0 28px; padding:16px 20px; background:#FFF7ED; border:1px solid #FED7AA; border-radius:12px; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.6; color:#9A3412;">
+      <strong>Aviso:</strong> este resultado é uma estimativa e não substitui avaliação, diagnóstico ou acompanhamento de um profissional de saúde qualificado (médico, nutricionista ou educador físico). Todo o cálculo acontece no seu navegador — nenhum dado é enviado a nenhum servidor.
+    </div>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Perguntas frequentes</h2>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">O café e outras bebidas contam para a meta de água?</div>
+      <p style="margin:0;">Contribuem para a hidratação total, mas água pura continua sendo a fonte mais recomendada, sem açúcar, cafeína ou calorias extras.</p>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Essa quantidade já inclui a água dos alimentos?</div>
+      <p style="margin:0;">Não. O resultado se refere à ingestão de líquidos — frutas, verduras e outros alimentos também contribuem com parte da hidratação diária.</p>
+    </div>
+    <div>
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Preciso beber mais água em dias muito quentes?</div>
+      <p style="margin:0;">Sim. Calor, suor excessivo e maior altitude aumentam a necessidade além da estimativa padrão desta calculadora.</p>
+    </div>
+  </div>
+
+  <div style="margin:32px 0;">
+    <dc-import name="AdSlot" label="336×280" height="280" max-width="336px" margin="0 auto" hint-size="336px,280px"></dc-import>
+  </div>
+
+  <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 20px;">Artigos relacionados</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-bottom:56px;">
+    <dc-import name="ArticleCard" href="artigo-hidratacao-desempenho-fisico.dc.html" image-id="img-rel-hidratacao-agua" image-src="images/pessoa-bebendo-agua-pos-treino.jpg" image-alt="Homem bebendo água de garrafa esportiva após o treino" image-placeholder="Foto: hidratação pós-treino" category="Saúde" title="Hidratação e desempenho físico: quanta água você deveria beber por dia" excerpt="Mesmo a desidratação leve compromete o rendimento." read-time="7 min" date="22 ago 2026" hint-size="100%,320px"></dc-import>
+    <dc-import name="ArticleCard" href="artigo-treino-zona-2-o-que-e-tendencia-fitness.dc.html" image-id="img-rel-zona2-agua" image-src="images/corrida-leve-zona2-parque.jpg" image-alt="Pessoa correndo em ritmo leve e constante em parque" image-placeholder="Foto: corrida leve" category="Saúde" title="Treino de Zona 2: o que é e por que virou tendência no fitness" excerpt="Entenda o treino de Zona 2 e como calcular sua faixa ideal." read-time="10 min" date="24 ago 2026" hint-size="100%,320px"></dc-import>
+  </div>
+</article>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { peso: '', atividade: '0', resultado: null, erro: '' };
+  renderVals() {
+    const { peso, atividade, resultado, erro } = this.state;
+    return {
+      peso, atividade, resultado, erro,
+      hasErro: !!erro,
+      hasResultado: !!resultado,
+      onPesoChange: (e) => this.setState({ peso: e.target.value }),
+      onAtividadeChange: (e) => this.setState({ atividade: e.target.value }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        const p = parseFloat(String(this.state.peso).replace(',', '.'));
+        const extra = parseFloat(this.state.atividade);
+        if (!p || p <= 0) {
+          this.setState({ erro: 'Informe um peso válido, maior que zero.', resultado: null });
+          return;
+        }
+        const ml = p * 35 + extra;
+        const litros = ml / 1000;
+        this.setState({ erro: '', resultado: { litros: litros.toFixed(1), copos: Math.round(ml / 250) } });
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
