@@ -17,6 +17,7 @@ Para cada artigo:
 - Categorizar corretamente conforme as categorias já existentes.
 - Aplicar dados estruturados (schema Article, e FAQPage se houver perguntas frequentes).
 - URL amigável em português, seguindo o padrão das URLs já existentes.
+- IMPORTANTE (SEO/crawlers): `<title>`, `<link rel="canonical">`, `<link rel="icon">`, `<meta name="description">`, todas as `<meta property="og:*">`/`<meta name="twitter:*">` e os `<script type="application/ld+json">` devem ficar no `<head>` real do documento (antes de `<script src="./support.js">`), NUNCA apenas dentro do bloco `<helmet>` no `<body>` — esse bloco só é lido via JavaScript no navegador, então crawlers que não executam JS (Facebook, WhatsApp, Twitter/X, LinkedIn) não veem essas tags se elas ficarem só ali. Copie a estrutura de `<head>` de um artigo/receita já existente (ex: `artigo-vitamina-d-beneficios-deficiencia-suplementar.dc.html`) em vez de reinventar — o bloco `<helmet>` deve conter só o que é puramente apresentacional (preconnect, stylesheet de fontes, `<style>` inline).
 
 ## Etapa 3 — Escrever as 2 receitas
 Para cada receita:

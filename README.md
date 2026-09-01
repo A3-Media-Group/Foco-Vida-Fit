@@ -35,6 +35,19 @@ Este é um site **100% estático** (sem build, sem `package.json`, sem framework
 
 `index.html` (raiz) contém o mesmo conteúdo da home (`index.dc.html`), duplicado — não um redirecionamento — para que qualquer servidor que sirva `index.html` por padrão já mostre o site real, sem depender de um refresh funcionar. **Se editar a home, aplique a mudança nos dois arquivos** (`index.dc.html` e `index.html`). Os links internos de navegação (menu, rodapé) continuam apontando para `index.dc.html`.
 
+## SEO / meta tags e crawlers (og:*, twitter:*, JSON-LD)
+
+O `support.js` processa o bloco `<helmet>` (dentro do `<body>`) via JavaScript no navegador — ótimo para reagir a mudanças de tema/rota, mas invisível para crawlers que não executam JS (Facebook, WhatsApp, Twitter/X, LinkedIn; o Facebook Sharing Debugger reporta isso como "a propriedade og:image foi inferida"). Por isso, em toda página (`*.dc.html`), as tags que precisam existir na resposta HTML crua são colocadas diretamente no `<head>` real do documento, antes de `<script src="./support.js">`:
+
+- `<title>`, `<link rel="canonical">`, `<link rel="icon">`
+- `<meta name="description">`, `<meta name="robots">` (quando presente)
+- todas as `<meta property="og:*">` e `<meta name="twitter:*">`
+- todos os `<script type="application/ld+json">` (Article, FAQPage, Recipe, Organization, WebSite etc.)
+
+O bloco `<helmet>` no `<body>` continua existindo, mas só com o que é puramente apresentacional e não afeta crawlers: `<link rel="preconnect">`, o `<link rel="stylesheet">` das fontes do Google Fonts, o `<style>` inline e (na home) o `<script src="image-slot.js">`.
+
+**Ao criar uma página nova, copie o `<head>` de uma página existente** (ex.: qualquer `artigo-*.dc.html`) em vez de colocar essas tags dentro do `<helmet>` — isso é sem build/SSR, então a única forma de garantir que o crawler veja as tags é elas já estarem no HTML estático desde o início.
+
 ## Estrutura
 - Páginas principais: `index.dc.html`, `blog.dc.html`, `receitas.dc.html`, `sobre.dc.html`, `contato.dc.html`, páginas legais, `404.dc.html`
 - 15 artigos: `artigo-*.dc.html`
