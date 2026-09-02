@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diário de Evolução: peso, medidas e treinos | FVF</title>
+  <link rel="canonical" href="https://focovidafit.com.br/diario-evolucao.dc.html" />
+  <link rel="icon" type="image/png" href="logo-foco-vida-fit.png" />
+  <meta name="description" content="Registre peso, medidas corporais e treinos gratuitamente. Veja sua evolução em gráfico e exporte em CSV. Dados salvos só no seu navegador." />
+  <meta property="og:title" content="Diário de Evolução: peso, medidas e treinos | FVF" />
+  <meta property="og:description" content="Registre peso, medidas corporais e treinos gratuitamente. Veja sua evolução em gráfico e exporte em CSV. Dados salvos só no seu navegador." />
+  <meta property="og:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <meta property="og:url" content="https://focovidafit.com.br/diario-evolucao.dc.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Diário de Evolução: peso, medidas e treinos | FVF" />
+  <meta name="twitter:description" content="Registre peso, medidas corporais e treinos gratuitamente. Veja sua evolução em gráfico e exporte em CSV. Dados salvos só no seu navegador." />
+  <meta name="twitter:image" content="https://focovidafit.com.br/images/pessoa-treinando-ao-ar-livre.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Diário de Evolução","url":"https://focovidafit.com.br/diario-evolucao.dc.html","applicationCategory":"HealthApplication","operatingSystem":"Any (navegador web)","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"provider":{"@type":"Organization","name":"Foco Vida Fit"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Meus dados ficam salvos em algum servidor?","acceptedAnswer":{"@type":"Answer","text":"Não. Todos os registros ficam salvos apenas no armazenamento local (localStorage) do seu navegador. O Foco Vida Fit não envia, recebe nem armazena nenhum dado inserido nesta ferramenta."}},{"@type":"Question","name":"O que acontece se eu limpar os dados do navegador?","acceptedAnswer":{"@type":"Answer","text":"O histórico registrado nesta ferramenta é apagado permanentemente, já que ele existe apenas no seu navegador. Exporte seus dados em CSV regularmente para manter uma cópia de segurança."}},{"@type":"Question","name":"Consigo acessar meu histórico em outro dispositivo ou navegador?","acceptedAnswer":{"@type":"Answer","text":"Não diretamente. Como os dados ficam salvos localmente, cada navegador e dispositivo tem seu próprio histórico separado. Exporte o CSV e leve o arquivo para importar manualmente as informações onde precisar."}}]}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0; background:#FAFAF7;}
+    @media print {
+      header, footer, #fvf-cookie-banner, .fvf-no-print { display:none !important; }
+    }
+  </style>
+</helmet>
+<dc-import name="Header" hint-size="100%,66px"></dc-import>
+<dc-import name="CookieBanner" hint-size="0,0"></dc-import>
+<dc-import name="BackToTop" hint-size="0,0"></dc-import>
+
+<div style="max-width:800px; margin:0 auto; padding:20px 24px 0; font-family:'Work Sans',sans-serif; font-size:13px; color:#8A9790;">
+  <a href="index.dc.html" style="color:#8A9790; text-decoration:none;">Home</a> / <span>Diário de Evolução</span>
+</div>
+
+<article style="max-width:800px; margin:0 auto; padding:16px 24px 0;">
+  <span style="display:inline-block; margin-bottom:14px; font-family:'Work Sans',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#16A34A;">Ferramenta</span>
+  <h1 style="margin:0 0 16px; font-family:'Poppins',sans-serif; font-weight:800; font-size:32px; line-height:1.25; color:#14211A;">Diário de Evolução: acompanhe seu progresso</h1>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33; margin-bottom:28px;">
+    <p style="margin:0 0 16px;">O Diário de Evolução é uma ferramenta gratuita para registrar peso, medidas corporais e treinos ao longo do tempo, sem precisar criar conta ou fazer login. Acompanhar essas informações de forma consistente é uma das formas mais eficazes de perceber padrões reais — em vez de depender só da lembrança ou da sensação do dia — e de manter a motivação em objetivos de emagrecimento, ganho de massa ou simplesmente saúde geral.</p>
+    <p style="margin:0 0 16px;">Diferente do peso na balança, que pode oscilar por vários motivos além de gordura corporal (retenção de líquido, alimentação do dia, horário), olhar a evolução ao longo de semanas — junto com medidas e frequência de treino — costuma dar um retrato bem mais confiável do progresso real.</p>
+    <p style="margin:0;"><strong>Privacidade total:</strong> todos os dados que você registrar aqui ficam salvos apenas no armazenamento local do seu próprio navegador (localStorage). Nada é enviado, recebido ou armazenado pelo Foco Vida Fit — a ferramenta funciona inteiramente no seu dispositivo.</p>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <dc-import name="AdSlot" label="728×90" height="90" max-width="728px" margin="0 auto" hint-size="100%,90px"></dc-import>
+  </div>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33; margin-bottom:28px;">
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como usar</h2>
+    <ol style="margin:0; padding-left:22px;">
+      <li style="margin-bottom:8px;">Escolha a data e informe seu peso do dia.</li>
+      <li style="margin-bottom:8px;">Se quiser, ative as medidas que deseja acompanhar (cintura, quadril, braço, coxa) e preencha as que fizer sentido para você.</li>
+      <li style="margin-bottom:8px;">Se treinou, registre o tipo e a duração do treino.</li>
+      <li style="margin-bottom:8px;">Clique em "Salvar registro". O gráfico e a tabela abaixo atualizam na hora.</li>
+      <li>Exporte seu histórico em CSV sempre que quiser guardar uma cópia ou levar para um profissional.</li>
+    </ol>
+  </div>
+
+  <div style="background:#fff; border:1px solid #E4E8E2; border-radius:16px; padding:28px 24px; margin-bottom:32px;">
+    <h2 style="margin:0 0 6px; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">Registrar hoje</h2>
+    <p style="margin:0 0 18px; font-family:'Work Sans',sans-serif; font-size:13px; color:#8A9790;">🔒 Salvo só neste navegador — nada é enviado a nenhum servidor.</p>
+
+    <div style="margin:0 0 22px; padding:12px 16px; background:#EFF6FF; border:1px solid #BFDBFE; border-radius:10px; font-family:'Work Sans',sans-serif; font-size:13px; line-height:1.55; color:#1E3A8A;">
+      ⚠️ <strong>Importante:</strong> seus registros existem apenas neste navegador, neste dispositivo. Se você limpar os dados de navegação, usar aba anônima/privada ou trocar de computador/celular, esse histórico será perdido. Exporte em CSV de tempos em tempos para manter uma cópia de segurança.
+    </div>
+
+    <form onSubmit="{{ onSalvar }}" style="display:flex; flex-direction:column; gap:18px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:16px;">
+        <div>
+          <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Data</label>
+          <input value="{{ data }}" onInput="{{ onDataChange }}" type="date" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+        </div>
+        <div>
+          <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Peso (kg)</label>
+          <input value="{{ peso }}" onInput="{{ onPesoChange }}" type="number" step="0.1" min="1" max="400" placeholder="Ex: 78,5" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:8px;">Medidas (opcional) — escolha o que quer acompanhar</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+          <button type="button" onClick="{{ onToggleCintura }}" style="{{ chipCinturaStyle }}">Cintura</button>
+          <button type="button" onClick="{{ onToggleQuadril }}" style="{{ chipQuadrilStyle }}">Quadril</button>
+          <button type="button" onClick="{{ onToggleBraco }}" style="{{ chipBracoStyle }}">Braço</button>
+          <button type="button" onClick="{{ onToggleCoxa }}" style="{{ chipCoxaStyle }}">Coxa</button>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:16px;">
+          <sc-if value="{{ campos.cintura }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Cintura (cm)</label>
+              <input value="{{ cintura }}" onInput="{{ onCinturaChange }}" type="number" step="0.1" min="1" max="250" placeholder="Ex: 82" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+            </div>
+          </sc-if>
+          <sc-if value="{{ campos.quadril }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Quadril (cm)</label>
+              <input value="{{ quadril }}" onInput="{{ onQuadrilChange }}" type="number" step="0.1" min="1" max="250" placeholder="Ex: 98" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+            </div>
+          </sc-if>
+          <sc-if value="{{ campos.braco }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Braço (cm)</label>
+              <input value="{{ braco }}" onInput="{{ onBracoChange }}" type="number" step="0.1" min="1" max="100" placeholder="Ex: 32" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+            </div>
+          </sc-if>
+          <sc-if value="{{ campos.coxa }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <label style="display:block; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:6px;">Coxa (cm)</label>
+              <input value="{{ coxa }}" onInput="{{ onCoxaChange }}" type="number" step="0.1" min="1" max="120" placeholder="Ex: 55" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+            </div>
+          </sc-if>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600; color:#14211A; margin-bottom:8px;">Treino do dia (opcional)</div>
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:16px;">
+          <div>
+            <input value="{{ treinoTipo }}" onInput="{{ onTreinoTipoChange }}" type="text" maxlength="80" placeholder="Ex: Musculação - peito e tríceps" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+          </div>
+          <div>
+            <input value="{{ treinoDuracao }}" onInput="{{ onTreinoDuracaoChange }}" type="number" step="1" min="0" max="600" placeholder="Duração (min)" style="width:100%; box-sizing:border-box; padding:12px 14px; border-radius:10px; border:1px solid #D9E2DA; font-family:'Work Sans',sans-serif; font-size:15px; outline:none;" />
+          </div>
+        </div>
+      </div>
+
+      <sc-if value="{{ hasErro }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0; color:#DC2626; font-family:'Work Sans',sans-serif; font-size:13.5px;">{{ erro }}</p>
+      </sc-if>
+      <sc-if value="{{ hasSucesso }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0; color:#16A34A; font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:600;">{{ sucesso }}</p>
+      </sc-if>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button type="submit" style="padding:13px 30px; border-radius:999px; border:none; background:#16A34A; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">{{ botaoSalvarLabel }}</button>
+        <sc-if value="{{ editando }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ onCancelarEdicao }}" style="padding:13px 26px; border-radius:999px; border:1px solid #D9E2DA; background:#fff; color:#14211A; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer;">Cancelar edição</button>
+        </sc-if>
+      </div>
+    </form>
+  </div>
+
+  <sc-if value="{{ hasRegistros }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#fff; border:1px solid #E4E8E2; border-radius:16px; padding:28px 24px; margin-bottom:32px;">
+      <h2 style="margin:0 0 16px; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">Evolução</h2>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px;">
+        <button type="button" onClick="{{ onMetricPeso }}" style="{{ tabPesoStyle }}">Peso</button>
+        <button type="button" onClick="{{ onMetricCintura }}" style="{{ tabCinturaStyle }}">Cintura</button>
+        <button type="button" onClick="{{ onMetricQuadril }}" style="{{ tabQuadrilStyle }}">Quadril</button>
+        <button type="button" onClick="{{ onMetricBraco }}" style="{{ tabBracoStyle }}">Braço</button>
+        <button type="button" onClick="{{ onMetricCoxa }}" style="{{ tabCoxaStyle }}">Coxa</button>
+      </div>
+
+      <sc-if value="{{ chart.metricHasData }}" hint-placeholder-val="{{ true }}">
+        <p style="margin:0 0 14px; font-family:'Work Sans',sans-serif; font-size:14px; color:#5B6B60;">{{ chart.resumo }} <strong style="color:#14211A;">({{ chart.variacao }})</strong></p>
+        <div style="overflow-x:auto;">
+          <div style="position:relative; width:100%; height:220px; min-width:420px;">
+            <svg viewBox="0 0 680 220" style="width:100%; height:220px; display:block;">
+              <line x1="40" y1="{{ chart.topY }}" x2="660" y2="{{ chart.topY }}" stroke="#F1F5F0" stroke-width="1" />
+              <line x1="40" y1="{{ chart.midY }}" x2="660" y2="{{ chart.midY }}" stroke="#F1F5F0" stroke-width="1" />
+              <line x1="40" y1="{{ chart.baselineY }}" x2="660" y2="{{ chart.baselineY }}" stroke="#D9E2DA" stroke-width="1" />
+              <polyline points="{{ chart.polyline }}" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+                <title>{{ chart.resumo }}</title>
+              </polyline>
+              <circle cx="{{ chart.firstX }}" cy="{{ chart.firstY }}" r="4" fill="#16A34A" />
+              <circle cx="{{ chart.lastX }}" cy="{{ chart.lastY }}" r="4" fill="#16A34A" />
+            </svg>
+            <div style="{{ chart.maxLabelStyle }}">{{ chart.maxLabel }}</div>
+            <div style="{{ chart.midLabelStyle }}">{{ chart.midLabel }}</div>
+            <div style="{{ chart.minLabelStyle }}">{{ chart.minLabel }}</div>
+            <div style="{{ chart.firstLabelStyle }}">{{ chart.firstLabel }}</div>
+            <div style="{{ chart.lastLabelStyle }}">{{ chart.lastLabel }}</div>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ chart.metricNoData }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0; font-family:'Work Sans',sans-serif; font-size:14px; color:#8A9790;">Nenhum registro com essa medida ainda. Ative e preencha esse campo em um novo registro para ver o gráfico.</p>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ hasRegistros }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#fff; border:1px solid #E4E8E2; border-radius:16px; padding:28px 24px; margin-bottom:32px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+        <h2 style="margin:0; font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:#14211A;">Seus registros ({{ totalRegistros }})</h2>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" onClick="{{ onExportarCSV }}" style="padding:9px 18px; border-radius:999px; border:1px solid #D9E2DA; background:#fff; color:#14211A; font-family:'Work Sans',sans-serif; font-weight:600; font-size:13.5px; cursor:pointer;">⬇ Exportar CSV</button>
+          <button type="button" onClick="{{ onImprimir }}" style="padding:9px 18px; border-radius:999px; border:1px solid #D9E2DA; background:#fff; color:#14211A; font-family:'Work Sans',sans-serif; font-weight:600; font-size:13.5px; cursor:pointer;">🖨 Imprimir / Salvar PDF</button>
+          <button type="button" onClick="{{ onPedirLimpar }}" style="padding:9px 18px; border-radius:999px; border:1px solid #FCA5A5; background:#fff; color:#DC2626; font-family:'Work Sans',sans-serif; font-weight:600; font-size:13.5px; cursor:pointer;">Limpar tudo</button>
+        </div>
+      </div>
+
+      <sc-if value="{{ confirmandoLimpar }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-bottom:18px; padding:16px 18px; background:#FEF2F2; border:1px solid #FCA5A5; border-radius:10px; font-family:'Work Sans',sans-serif; font-size:13.5px; color:#991B1B;">
+          <p style="margin:0 0 12px;">Isso vai apagar permanentemente os {{ totalRegistros }} registros salvos neste navegador. Essa ação não pode ser desfeita.</p>
+          <div style="display:flex; gap:10px;">
+            <button type="button" onClick="{{ onConfirmarLimpar }}" style="padding:8px 18px; border-radius:999px; border:none; background:#DC2626; color:#fff; font-family:'Work Sans',sans-serif; font-weight:600; font-size:13px; cursor:pointer;">Sim, apagar tudo</button>
+            <button type="button" onClick="{{ onCancelarLimpar }}" style="padding:8px 18px; border-radius:999px; border:1px solid #D9E2DA; background:#fff; color:#14211A; font-family:'Work Sans',sans-serif; font-weight:600; font-size:13px; cursor:pointer;">Cancelar</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="overflow-x:auto;">
+        <div style="min-width:640px;">
+          <div style="display:grid; grid-template-columns:100px 90px 1fr 1fr 110px; gap:10px; padding:0 12px 10px; font-family:'Work Sans',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; color:#8A9790; border-bottom:1px solid #E4E8E2;">
+            <div>Data</div><div>Peso</div><div>Medidas</div><div>Treino</div><div>Ações</div>
+          </div>
+          <sc-for list="{{ tableRows }}" as="r" hint-placeholder-count="3">
+            <div style="display:grid; grid-template-columns:100px 90px 1fr 1fr 110px; gap:10px; padding:12px; align-items:center; border-bottom:1px solid #F1F5F0; font-family:'Work Sans',sans-serif; font-size:13.5px; color:#2E3A33;">
+              <div>{{ r.dataDisplay }}</div>
+              <div style="font-weight:700; color:#14211A;">{{ r.pesoDisplay }}</div>
+              <div style="color:#5B6B60;">{{ r.medidasDisplay }}</div>
+              <div style="color:#5B6B60;">{{ r.treinoDisplay }}</div>
+              <div style="display:flex; gap:8px;">
+                <button type="button" onClick="{{ r.onEditar }}" aria-label="Editar" style="width:32px; height:32px; border-radius:8px; border:1px solid #D9E2DA; background:#fff; cursor:pointer; font-size:14px;">✏️</button>
+                <button type="button" onClick="{{ r.onExcluir }}" aria-label="Excluir" style="width:32px; height:32px; border-radius:8px; border:1px solid #D9E2DA; background:#fff; cursor:pointer; font-size:14px;">🗑️</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.8; color:#2E3A33;">
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Como interpretar sua evolução</h2>
+    <ul style="margin:0 0 28px; padding-left:22px;">
+      <li style="margin-bottom:8px;"><strong>Perda ou ganho de peso saudável costuma ser gradual</strong> — algo entre 0,5 e 1 kg por semana costuma ser considerado um ritmo sustentável para emagrecimento, segundo diretrizes de saúde. Mudanças bruscas de um dia para o outro geralmente refletem água corporal, não gordura.</li>
+      <li style="margin-bottom:8px;"><strong>O peso na balança oscila naturalmente</strong> com hidratação, alimentação, ciclo hormonal e horário da pesagem. Olhar a tendência de várias semanas é mais confiável do que comparar dois dias isolados.</li>
+      <li style="margin-bottom:8px;"><strong>Medidas corporais podem mudar mesmo quando o peso não muda</strong> — é comum perder centímetros de cintura e ganhar massa muscular ao mesmo tempo, principalmente em quem treina força, sem o peso total variar muito.</li>
+      <li><strong>Consistência de treino importa tanto quanto o número na balança.</strong> Ver seu histórico de treinos ao longo do tempo ajuda a identificar se quedas ou estagnações coincidem com períodos de menos atividade.</li>
+    </ul>
+
+    <div style="margin:0 0 28px; padding:16px 20px; background:#FFF7ED; border:1px solid #FED7AA; border-radius:12px; font-family:'Work Sans',sans-serif; font-size:13.5px; line-height:1.6; color:#9A3412;">
+      <strong>Aviso:</strong> esta ferramenta é apenas para acompanhamento pessoal e não substitui avaliação, diagnóstico ou acompanhamento de um profissional de saúde qualificado (médico, nutricionista ou educador físico). Todos os dados ficam salvos apenas no seu navegador — nenhum dado é enviado a nenhum servidor.
+    </div>
+
+    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 14px;">Perguntas frequentes</h2>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Meus dados ficam salvos em algum servidor?</div>
+      <p style="margin:0;">Não. Todos os registros ficam salvos apenas no armazenamento local (localStorage) do seu navegador — nada é enviado ou armazenado pelo Foco Vida Fit.</p>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">O que acontece se eu limpar os dados do navegador?</div>
+      <p style="margin:0;">O histórico é apagado permanentemente, já que existe só no seu navegador. Exporte em CSV regularmente para manter uma cópia de segurança.</p>
+    </div>
+    <div>
+      <div style="font-weight:600; color:#14211A; margin-bottom:4px;">Consigo acessar meu histórico em outro dispositivo?</div>
+      <p style="margin:0;">Não diretamente — cada navegador/dispositivo tem seu próprio histórico separado. Exporte o CSV e leve o arquivo para onde precisar.</p>
+    </div>
+  </div>
+
+  <div style="margin:32px 0;">
+    <dc-import name="AdSlot" label="336×280" height="280" max-width="336px" margin="0 auto" hint-size="336px,280px"></dc-import>
+  </div>
+
+  <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#14211A; margin:0 0 20px;">Continue acompanhando sua saúde</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-bottom:56px;">
+    <dc-import name="CalculatorCard" href="calculadora-imc.dc.html" icon="📏" icon-bg="#F1F5F0" title="Calculadora de IMC" description="Descubra seu Índice de Massa Corporal e a classificação segundo a OMS." hint-size="100%,200px"></dc-import>
+    <dc-import name="CalculatorCard" href="calculadora-relacao-cintura-quadril.dc.html" icon="📊" icon-bg="#FFF1E8" title="Relação Cintura-Quadril (RCQ)" description="Calcule sua RCQ e entenda o risco cardiovascular associado, por gênero." hint-size="100%,200px"></dc-import>
+    <dc-import name="ArticleCard" href="artigo-deficit-calorico-emagrecimento-saudavel.dc.html" image-id="img-rel-deficit-evolucao" image-src="images/pessoa-correndo-parque-emagrecimento.jpg" image-alt="Homem correndo em parque arborizado, representando rotina de exercícios para emagrecimento" image-placeholder="Foto: déficit calórico" category="Emagrecimento" title="Déficit calórico: como emagrecer de forma saudável e sustentável" excerpt="A base de qualquer processo de emagrecimento eficaz." read-time="9 min" date="22 ago 2026" hint-size="100%,200px"></dc-import>
+  </div>
+</article>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LS_REGISTROS = 'fvf_evolucao_registros';
+const LS_CAMPOS = 'fvf_evolucao_campos';
+
+function todayISO() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+function formatDateBR(iso) {
+  if (!iso) return '—';
+  const [y, m, d] = iso.split('-');
+  return `${d}/${m}/${y}`;
+}
+function fmtNum(n) {
+  return Number.isFinite(n) ? (Math.round(n * 10) / 10).toString().replace('.', ',') : '';
+}
+function csvEscape(v) {
+  const s = String(v ?? '');
+  if (/[",;\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+  return s;
+}
+
+const METRIC_META = {
+  peso: { label: 'Peso', unit: ' kg' },
+  cintura: { label: 'Cintura', unit: ' cm' },
+  quadril: { label: 'Quadril', unit: ' cm' },
+  braco: { label: 'Braço', unit: ' cm' },
+  coxa: { label: 'Coxa', unit: ' cm' },
+};
+
+function buildChart(points, unit) {
+  if (points.length === 0) return { metricHasData: false, metricNoData: true };
+  const w = 680, padX = 44, padTop = 16, padBottom = 34;
+  const innerW = w - padX - 20;
+  const innerH = 220 - padTop - padBottom;
+  const values = points.map(p => p.y);
+  let min = Math.min(...values), max = Math.max(...values);
+  if (min === max) { min -= 1; max += 1; }
+  const n = points.length;
+  const coords = points.map((p, i) => ({
+    x: n === 1 ? w / 2 : padX + (innerW * i) / (n - 1),
+    y: padTop + innerH * (1 - (p.y - min) / (max - min)),
+  }));
+  const polyline = coords.map(c => `${c.x.toFixed(1)},${c.y.toFixed(1)}`).join(' ');
+  const first = points[0], last = points[n - 1];
+  const delta = last.y - first.y;
+  const topY = padTop, midY = padTop + innerH / 2, baselineY = padTop + innerH;
+  const axisLabelBase = { position: 'absolute', left: '4px', fontFamily: "'Work Sans',sans-serif", fontSize: '11px', color: '#8A9790', lineHeight: '1' };
+  const firstXPct = ((coords[0].x / w) * 100).toFixed(2) + '%';
+  const lastXPct = ((coords[n - 1].x / w) * 100).toFixed(2) + '%';
+  return {
+    metricHasData: true,
+    metricNoData: false,
+    polyline,
+    firstX: coords[0].x, firstY: coords[0].y,
+    lastX: coords[n - 1].x, lastY: coords[n - 1].y,
+    topY, midY, baselineY,
+    maxLabelStyle: { ...axisLabelBase, top: (topY - 6) + 'px' },
+    midLabelStyle: { ...axisLabelBase, top: (midY - 6) + 'px' },
+    minLabelStyle: { ...axisLabelBase, top: (baselineY - 6) + 'px' },
+    firstLabelStyle: { position: 'absolute', left: firstXPct, top: (baselineY + 14) + 'px', transform: n === 1 ? 'translateX(-50%)' : 'translateX(0)', fontFamily: "'Work Sans',sans-serif", fontSize: '11px', color: '#8A9790', lineHeight: '1' },
+    lastLabelStyle: { position: 'absolute', left: lastXPct, top: (baselineY + 14) + 'px', transform: 'translateX(-100%)', fontFamily: "'Work Sans',sans-serif", fontSize: '11px', color: '#8A9790', lineHeight: '1', display: n === 1 ? 'none' : 'block' },
+    maxLabel: fmtNum(max) + unit, midLabel: fmtNum((min + max) / 2) + unit, minLabel: fmtNum(min) + unit,
+    firstLabel: first.label, lastLabel: last.label,
+    resumo: `${fmtNum(first.y)}${unit} (${first.label}) → ${fmtNum(last.y)}${unit} (${last.label})`,
+    variacao: (delta >= 0 ? '+' : '') + fmtNum(delta) + unit,
+  };
+}
+
+class Component extends DCLogic {
+  state = {
+    data: todayISO(), peso: '', cintura: '', quadril: '', braco: '', coxa: '',
+    treinoTipo: '', treinoDuracao: '',
+    campos: { cintura: false, quadril: false, braco: false, coxa: false },
+    registros: [], editandoId: null,
+    erro: '', sucesso: '', confirmandoLimpar: false, chartMetric: 'peso',
+  };
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem(LS_REGISTROS);
+      const registros = raw ? JSON.parse(raw) : [];
+      const rawCampos = localStorage.getItem(LS_CAMPOS);
+      const campos = rawCampos ? JSON.parse(rawCampos) : this.state.campos;
+      this.setState({ registros: Array.isArray(registros) ? registros : [], campos: { ...this.state.campos, ...campos } });
+    } catch (e) { /* localStorage indisponível (modo privado etc.) — segue com lista vazia */ }
+  }
+
+  persistRegistros(registros) {
+    try { localStorage.setItem(LS_REGISTROS, JSON.stringify(registros)); } catch (e) {}
+  }
+  persistCampos(campos) {
+    try { localStorage.setItem(LS_CAMPOS, JSON.stringify(campos)); } catch (e) {}
+  }
+
+  toggleCampo(campo) {
+    const campos = { ...this.state.campos, [campo]: !this.state.campos[campo] };
+    this.persistCampos(campos);
+    this.setState({ campos });
+  }
+
+  iniciarEdicao(id) {
+    const r = this.state.registros.find(x => x.id === id);
+    if (!r) return;
+    this.setState({
+      editandoId: id, data: r.data, peso: String(r.peso ?? ''),
+      cintura: r.cintura != null ? String(r.cintura) : '', quadril: r.quadril != null ? String(r.quadril) : '',
+      braco: r.braco != null ? String(r.braco) : '', coxa: r.coxa != null ? String(r.coxa) : '',
+      treinoTipo: r.treinoTipo || '', treinoDuracao: r.treinoDuracao != null ? String(r.treinoDuracao) : '',
+      erro: '', sucesso: '',
+    });
+  }
+
+  excluirRegistro(id) {
+    const registros = this.state.registros.filter(x => x.id !== id);
+    this.persistRegistros(registros);
+    const isEditing = this.state.editandoId === id;
+    this.setState({ registros, ...(isEditing ? { editandoId: null } : {}) });
+  }
+
+  resetForm() {
+    this.setState({
+      data: todayISO(), peso: '', cintura: '', quadril: '', braco: '', coxa: '',
+      treinoTipo: '', treinoDuracao: '', editandoId: null,
+    });
+  }
+
+  renderVals() {
+    const s = this.state;
+    const chipBase = { padding: '7px 16px', borderRadius: '999px', fontFamily: "'Work Sans',sans-serif", fontWeight: 600, fontSize: '13px', cursor: 'pointer' };
+    const chipStyle = (on) => ({ ...chipBase, border: on ? 'none' : '1px solid #D9E2DA', background: on ? '#16A34A' : '#fff', color: on ? '#fff' : '#14211A' });
+
+    const registrosOrdAsc = [...s.registros].sort((a, b) => a.data.localeCompare(b.data));
+    const registrosOrdDesc = [...s.registros].sort((a, b) => b.data.localeCompare(a.data));
+
+    const tableRows = registrosOrdDesc.map(r => {
+      const medidas = [];
+      if (r.cintura != null) medidas.push(`Cintura: ${fmtNum(r.cintura)} cm`);
+      if (r.quadril != null) medidas.push(`Quadril: ${fmtNum(r.quadril)} cm`);
+      if (r.braco != null) medidas.push(`Braço: ${fmtNum(r.braco)} cm`);
+      if (r.coxa != null) medidas.push(`Coxa: ${fmtNum(r.coxa)} cm`);
+      const treino = r.treinoTipo ? `${r.treinoTipo}${r.treinoDuracao != null ? ' · ' + r.treinoDuracao + ' min' : ''}` : '—';
+      return {
+        id: r.id,
+        dataDisplay: formatDateBR(r.data),
+        pesoDisplay: fmtNum(r.peso) + ' kg',
+        medidasDisplay: medidas.length ? medidas.join(' · ') : '—',
+        treinoDisplay: treino,
+        onEditar: () => this.iniciarEdicao(r.id),
+        onExcluir: () => this.excluirRegistro(r.id),
+      };
+    });
+
+    const tabStyle = (metric) => ({ ...chipBase, border: s.chartMetric === metric ? 'none' : '1px solid #D9E2DA', background: s.chartMetric === metric ? '#16A34A' : '#fff', color: s.chartMetric === metric ? '#fff' : '#14211A' });
+    const meta = METRIC_META[s.chartMetric];
+    const points = registrosOrdAsc
+      .filter(r => r[s.chartMetric] != null)
+      .map(r => ({ y: r[s.chartMetric], label: formatDateBR(r.data).slice(0, 5) }));
+    const chart = buildChart(points, meta.unit);
+
+    return {
+      data: s.data, peso: s.peso, cintura: s.cintura, quadril: s.quadril, braco: s.braco, coxa: s.coxa,
+      treinoTipo: s.treinoTipo, treinoDuracao: s.treinoDuracao,
+      campos: s.campos,
+      chipCinturaStyle: chipStyle(s.campos.cintura), chipQuadrilStyle: chipStyle(s.campos.quadril),
+      chipBracoStyle: chipStyle(s.campos.braco), chipCoxaStyle: chipStyle(s.campos.coxa),
+      onToggleCintura: () => this.toggleCampo('cintura'), onToggleQuadril: () => this.toggleCampo('quadril'),
+      onToggleBraco: () => this.toggleCampo('braco'), onToggleCoxa: () => this.toggleCampo('coxa'),
+      onDataChange: (e) => this.setState({ data: e.target.value }),
+      onPesoChange: (e) => this.setState({ peso: e.target.value }),
+      onCinturaChange: (e) => this.setState({ cintura: e.target.value }),
+      onQuadrilChange: (e) => this.setState({ quadril: e.target.value }),
+      onBracoChange: (e) => this.setState({ braco: e.target.value }),
+      onCoxaChange: (e) => this.setState({ coxa: e.target.value }),
+      onTreinoTipoChange: (e) => this.setState({ treinoTipo: e.target.value }),
+      onTreinoDuracaoChange: (e) => this.setState({ treinoDuracao: e.target.value }),
+      erro: s.erro, hasErro: !!s.erro,
+      sucesso: s.sucesso, hasSucesso: !!s.sucesso && !s.erro,
+      editando: !!s.editandoId,
+      botaoSalvarLabel: s.editandoId ? 'Salvar alterações' : 'Salvar registro',
+      onCancelarEdicao: () => this.resetForm(),
+      hasRegistros: s.registros.length > 0,
+      totalRegistros: s.registros.length,
+      tableRows,
+      confirmandoLimpar: s.confirmandoLimpar,
+      onPedirLimpar: () => this.setState({ confirmandoLimpar: true }),
+      onCancelarLimpar: () => this.setState({ confirmandoLimpar: false }),
+      onConfirmarLimpar: () => {
+        this.persistRegistros([]);
+        this.setState({ registros: [], confirmandoLimpar: false, editandoId: null });
+      },
+      chart,
+      tabPesoStyle: tabStyle('peso'), tabCinturaStyle: tabStyle('cintura'), tabQuadrilStyle: tabStyle('quadril'),
+      tabBracoStyle: tabStyle('braco'), tabCoxaStyle: tabStyle('coxa'),
+      onMetricPeso: () => this.setState({ chartMetric: 'peso' }),
+      onMetricCintura: () => this.setState({ chartMetric: 'cintura' }),
+      onMetricQuadril: () => this.setState({ chartMetric: 'quadril' }),
+      onMetricBraco: () => this.setState({ chartMetric: 'braco' }),
+      onMetricCoxa: () => this.setState({ chartMetric: 'coxa' }),
+      onExportarCSV: () => {
+        const header = ['Data', 'Peso (kg)', 'Cintura (cm)', 'Quadril (cm)', 'Braço (cm)', 'Coxa (cm)', 'Treino', 'Duração (min)'];
+        const linhas = [header];
+        registrosOrdAsc.forEach(r => linhas.push([
+          formatDateBR(r.data), fmtNum(r.peso), r.cintura != null ? fmtNum(r.cintura) : '', r.quadril != null ? fmtNum(r.quadril) : '',
+          r.braco != null ? fmtNum(r.braco) : '', r.coxa != null ? fmtNum(r.coxa) : '', r.treinoTipo || '', r.treinoDuracao != null ? r.treinoDuracao : '',
+        ]));
+        const csv = linhas.map(l => l.map(csvEscape).join(',')).join('\r\n');
+        try {
+          const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url; a.download = 'diario-evolucao-focovidafit.csv';
+          document.body.appendChild(a); a.click(); document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        } catch (e) { /* navegador sem suporte a download programático */ }
+      },
+      onImprimir: () => { try { window.print(); } catch (e) {} },
+      onSalvar: (e) => {
+        e.preventDefault();
+        const st = this.state;
+        const peso = parseFloat(String(st.peso).replace(',', '.'));
+        if (!st.data) { this.setState({ erro: 'Selecione uma data válida.', sucesso: '' }); return; }
+        if (!peso || peso <= 0 || peso > 400) { this.setState({ erro: 'Informe um peso válido, maior que zero.', sucesso: '' }); return; }
+        const medidas = {};
+        for (const campo of ['cintura', 'quadril', 'braco', 'coxa']) {
+          const raw = st[campo];
+          if (raw === '' || raw == null) continue;
+          const val = parseFloat(String(raw).replace(',', '.'));
+          if (!val || val <= 0 || val > 250) {
+            this.setState({ erro: `Confira o valor de ${campo} — precisa ser maior que zero e dentro de uma faixa válida.`, sucesso: '' });
+            return;
+          }
+          medidas[campo] = val;
+        }
+        let treinoDuracao = null;
+        if (st.treinoDuracao !== '' && st.treinoDuracao != null) {
+          const d = parseFloat(String(st.treinoDuracao).replace(',', '.'));
+          if (!(d >= 0) || d > 600) { this.setState({ erro: 'Duração do treino inválida.', sucesso: '' }); return; }
+          treinoDuracao = d;
+        }
+        const entry = {
+          id: st.editandoId || (Date.now() + '-' + Math.random().toString(36).slice(2, 8)),
+          data: st.data, peso,
+          cintura: medidas.cintura ?? null, quadril: medidas.quadril ?? null, braco: medidas.braco ?? null, coxa: medidas.coxa ?? null,
+          treinoTipo: st.treinoTipo ? st.treinoTipo.trim().slice(0, 80) : null,
+          treinoDuracao,
+        };
+        let registros;
+        if (st.editandoId) {
+          registros = st.registros.map(r => (r.id === st.editandoId ? entry : r));
+        } else {
+          registros = [...st.registros, entry];
+        }
+        this.persistRegistros(registros);
+        this.setState({ registros, erro: '', sucesso: st.editandoId ? 'Registro atualizado!' : 'Registro salvo!' });
+        this.resetForm();
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
